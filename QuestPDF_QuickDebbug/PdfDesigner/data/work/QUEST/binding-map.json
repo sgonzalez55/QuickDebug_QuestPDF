@@ -1,0 +1,139 @@
+{
+  "version": "1.0",
+  "customFieldPattern": "^f_",
+  "customFieldTemplate": "GetCustomField(model, \u0022{name}\u0022)",
+  "mappings": [
+    {
+      "match": "//cbc:Number",
+      "expr": "model.Document.Number"
+    },
+    {
+      "match": "//cbc:UUID",
+      "expr": "model.Document.CUFE"
+    },
+    {
+      "match": "//cbc:IssueDate",
+      "expr": "model.Document.IssueDate"
+    },
+    {
+      "match": "//cbc:DueDate",
+      "expr": "model.Document.DueDate"
+    },
+    {
+      "match": "//cbc:Note",
+      "expr": "model.Additional.Notes"
+    },
+    {
+      "match": "//Supplier/Name",
+      "expr": "model.Issuer.Name"
+    },
+    {
+      "match": "//Supplier/TaxId",
+      "expr": "model.Issuer.TaxId"
+    },
+    {
+      "match": "//Supplier/Address",
+      "expr": "model.Issuer.Address"
+    },
+    {
+      "match": "//Supplier/City",
+      "expr": "model.Issuer.City"
+    },
+    {
+      "match": "//Supplier/Phone",
+      "expr": "model.Issuer.Phone"
+    },
+    {
+      "match": "//Supplier/Email",
+      "expr": "model.Issuer.Email"
+    },
+    {
+      "match": "//Customer/Name",
+      "expr": "model.Customer.Name"
+    },
+    {
+      "match": "//Customer/TaxId",
+      "expr": "model.Customer.TaxId"
+    },
+    {
+      "match": "//Customer/Address",
+      "expr": "model.Customer.Address"
+    },
+    {
+      "match": "//Customer/City",
+      "expr": "model.Customer.City"
+    },
+    {
+      "match": "//Customer/Phone",
+      "expr": "model.Customer.Phone"
+    },
+    {
+      "match": "//Customer/Email",
+      "expr": "model.Customer.Email"
+    },
+    {
+      "match": "//Totals/Total",
+      "expr": "model.Totals.Total"
+    },
+    {
+      "match": "//Totals/Subtotal",
+      "expr": "model.Totals.Subtotal"
+    },
+    {
+      "match": "//Totals/TotalTax",
+      "expr": "model.Totals.TotalTax"
+    },
+    {
+      "match": "//Totals/TotalDiscount",
+      "expr": "model.Totals.TotalDiscount"
+    },
+    {
+      "match": "//Line/Description",
+      "expr": "line.Description"
+    },
+    {
+      "match": "//Line/Quantity",
+      "expr": "line.Quantity"
+    },
+    {
+      "match": "//Line/UnitPrice",
+      "expr": "line.UnitPrice"
+    },
+    {
+      "match": "//Line/LineTotal",
+      "expr": "line.LineTotal"
+    },
+    {
+      "match": "//Line/TaxRate",
+      "expr": "line.TaxRate"
+    },
+    {
+      "match": "//Line/TaxValor",
+      "expr": "line.TaxValor"
+    },
+    {
+      "match": "//Line/Unit",
+      "expr": "line.Unit"
+    },
+    {
+      "match": "//Line/Codigo_cd",
+      "expr": "line.Codigo_cd"
+    },
+    {
+      "match": "//Line/Discount",
+      "expr": "line.Discount"
+    },
+    {
+      "match": "//Line/ValorDescuento",
+      "expr": "line.ValorDescuento"
+    },
+    {
+      "match": "//Line/PrecioAntesIVA",
+      "expr": "line.PrecioAntesIVA"
+    },
+    {
+      "match": "//Line/Ibua",
+      "expr": "line.Ibua"
+    }
+  ]
+}

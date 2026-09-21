@@ -1,0 +1,120 @@
+{
+  "version": "3.0",
+  "page": {
+    "size": "Letter",
+    "orientation": "Portrait",
+    "width": 0,
+    "height": 0,
+    "margins": {
+      "top": 20,
+      "right": 20,
+      "bottom": 20,
+      "left": 20
+    },
+    "unit": "pt",
+    "fontFamily": "Liberation Sans",
+    "defaultFontSize": 10
+  },
+  "metadata": {
+    "nit": "",
+    "templateName": "PRUEBAS2",
+    "clientName": "Designer",
+    "version": "1.0"
+  },
+  "namespaces": {},
+  "header": [
+    {
+      "id": "988ea414",
+      "kind": "reportHeader",
+      "showOnce": true,
+      "height": 80,
+      "canGrow": false,
+      "compressDetail": false,
+      "renderAsTable": false,
+      "keepWithNext": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "c8e0dc10",
+      "kind": "pageHeader",
+      "showOnce": false,
+      "height": 60,
+      "canGrow": false,
+      "compressDetail": false,
+      "renderAsTable": false,
+      "keepWithNext": false,
+      "visible": true,
+      "elements": []
+    }
+  ],
+  "content": [
+    {
+      "id": "a0e3f33d",
+      "kind": "groupHeader",
+      "showOnce": false,
+      "height": 30,
+      "canGrow": false,
+      "compressDetail": false,
+      "renderAsTable": false,
+      "keepWithNext": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "fa4963d8",
+      "kind": "detail",
+      "showOnce": false,
+      "height": 110,
+      "canGrow": false,
+      "compressDetail": false,
+      "renderAsTable": false,
+      "keepWithNext": false,
+      "visible": true,
+      "repeat": {
+        "xpath": "",
+        "alias": ""
+      },
+      "elements": []
+    },
+    {
+      "id": "197a85f1",
+      "kind": "groupFooter",
+      "showOnce": false,
+      "height": 24,
+      "canGrow": false,
+      "compressDetail": false,
+      "renderAsTable": false,
+      "keepWithNext": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "8a8a33ee",
+      "kind": "reportFooter",
+      "showOnce": false,
+      "height": 64,
+      "canGrow": false,
+      "compressDetail": false,
+      "renderAsTable": false,
+      "keepWithNext": false,
+      "visible": true,
+      "elements": []
+    }
+  ],
+  "footer": [
+    {
+      "id": "63c9a37f",
+      "kind": "pageFooter",
+      "showOnce": false,
+      "height": 30,
+      "canGrow": false,
+      "compressDetail": false,
+      "renderAsTable": false,
+      "keepWithNext": false,
+      "visible": true,
+      "elements": []
+    }
+  ],
+  "expressions": {}
+}

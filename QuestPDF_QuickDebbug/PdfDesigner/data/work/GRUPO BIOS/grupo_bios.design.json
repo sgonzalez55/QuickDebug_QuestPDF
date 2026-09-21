@@ -1,0 +1,126 @@
+{
+  "version": "2.0",
+  "page": {
+    "size": "Letter",
+    "orientation": "Portrait",
+    "width": 0,
+    "height": 0,
+    "margins": {
+      "top": 20,
+      "right": 20,
+      "bottom": 20,
+      "left": 20
+    },
+    "unit": "pt",
+    "fontFamily": "Liberation Sans",
+    "defaultFontSize": 10
+  },
+  "metadata": {
+    "nit": "",
+    "templateName": "grupo_bios",
+    "clientName": "Designer",
+    "version": "1.0"
+  },
+  "namespaces": {},
+  "sections": [
+    {
+      "id": "ff73c3a2",
+      "kind": "reportHeader",
+      "height": 80,
+      "canGrow": false,
+      "visible": true,
+      "elements": [
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "/Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyTaxScheme/cac:RegistrationAddress/cbc:CityName",
+            "default": ""
+          },
+          "format": "text",
+          "x": 200,
+          "y": 50,
+          "width": 160,
+          "height": 18,
+          "zIndex": 0,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f5a23d3d",
+      "kind": "pageHeader",
+      "height": 60,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "f5658455",
+      "kind": "groupHeader",
+      "height": 30,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "43e3d01c",
+      "kind": "detail",
+      "height": 70,
+      "canGrow": false,
+      "visible": true,
+      "repeat": {
+        "xpath": "",
+        "alias": ""
+      },
+      "elements": [
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "/Invoice/cac:InvoiceLine",
+            "default": ""
+          },
+          "format": "text",
+          "x": 0,
+          "y": 0,
+          "width": 570,
+          "height": 30,
+          "zIndex": 0,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "a4019478",
+      "kind": "groupFooter",
+      "height": 24,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "29cebfb5",
+      "kind": "pageFooter",
+      "height": 30,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "a3551ce2",
+      "kind": "reportFooter",
+      "height": 64,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    }
+  ],
+  "expressions": {}
+}

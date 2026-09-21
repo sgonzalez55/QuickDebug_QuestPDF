@@ -1,0 +1,98 @@
+╔═══════════════════════════════════════════════════════════════╗
+║     SOLUCIÓN: Error "coreclr" en VS Code                      ║
+╚═══════════════════════════════════════════════════════════════╝
+
+❌ ERROR QUE VES:
+   "Couldn't find a debug adapter descriptor for debug type
+    'coreclr' (extension might have failed to activate)"
+
+═══════════════════════════════════════════════════════════════
+
+✅ SOLUCIÓN RÁPIDA (Sin instalar nada):
+
+NO uses el botón "Run" (▶️) de VS Code.
+
+En su lugar, abre TERMINAL y ejecuta:
+
+   dotnet run
+
+O doble click en:
+
+   EJECUTAR.bat
+
+═══════════════════════════════════════════════════════════════
+
+✅ SOLUCIÓN COMPLETA (Con debugging real):
+
+1. Instalar extensión C# Dev Kit:
+
+   a. Abre VS Code
+   b. Presiona Ctrl+Shift+X (Extensions)
+   c. Busca: "C# Dev Kit"
+   d. Click "Install"
+   e. Reinicia VS Code
+
+2. Después de instalar, el botón Run (▶️) funcionará
+
+═══════════════════════════════════════════════════════════════
+
+🐛 DEBUGGING SIN EXTENSIONES (Método recomendado HOY):
+
+Usa Console.WriteLine en el código:
+
+1. Abre Program.cs
+
+2. Después de línea 91, agrega:
+
+   Console.WriteLine("\n🔍 DEBUG:");
+   Console.WriteLine($"Cliente: {model.Customer.Name}");
+   Console.WriteLine($"Total: ${model.Totals.Total}");
+   Console.WriteLine($"CustomFields: {model.Additional.CustomFields.Count}");
+
+   foreach (var field in model.Additional.CustomFields)
+   {
+       Console.WriteLine($"  • {field.Key}: {field.Value.Substring(0, Math.Min(50, field.Value.Length))}");
+   }
+
+3. Ejecutar en terminal:
+
+   dotnet run
+
+4. Ver TODO el output en consola
+
+═══════════════════════════════════════════════════════════════
+
+💡 MEJOR OPCIÓN PARA TI:
+
+Opción A (Más rápido - SIN extensiones):
+→ Ejecuta en terminal: dotnet run
+→ Usa Console.WriteLine para ver datos
+→ Ver archivo: COMO_DEBUGEAR.md
+
+Opción B (Debugging profesional - CON extensiones):
+→ Instala C# Dev Kit (2 minutos)
+→ Usa breakpoints y F5
+→ Inspecciona variables visualmente
+
+═══════════════════════════════════════════════════════════════
+
+🚀 EJECUTAR AHORA:
+
+Método 1: Terminal
+   cd "F:\Pruebas de Formatos Masivos\DebugPDF\PdfQuickDebug"
+   dotnet run
+
+Método 2: Doble click
+   EJECUTAR.bat
+
+═══════════════════════════════════════════════════════════════
+
+📖 MÁS INFO:
+
+- COMO_DEBUGEAR.md       ← Guía completa de debugging
+- INICIO_RAPIDO.txt      ← Guía paso a paso
+- README.md              ← Documentación completa
+
+═══════════════════════════════════════════════════════════════
+
+¡LISTO! 🎉

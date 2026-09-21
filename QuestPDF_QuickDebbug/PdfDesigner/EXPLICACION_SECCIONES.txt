@@ -1,0 +1,308 @@
+================================================================================
+CÓMO ESTÁN COMPUESTAS LAS "SECCIONES" DEL DISEÑADOR Y CÓMO LLEGAN A QUESTPDF
+================================================================================
+
+Índice de contenidos:
+  0. El flujo general
+  1. Modelo: qué es una "sección"
+  2. La matemática compartida de alturas (BandFit)
+  3. Renderer runtime: QuestPDF en vivo
+  4. Codegen: cómo se escribe el C# QuestPDF
+  5. Ejemplo concreto (detalle de EXPORTACIONES SAS)
+  6. Los "extremos" del sistema
+  7. Dónde aterrizan los planes aprobados (P1-P4)
+
+
+--------------------------------------------------------------------------------
+0. EL FLUJO GENERAL
+--------------------------------------------------------------------------------
+
+design.json ──► DesignerJson.Load() ──► ReportDesign (modelo en memoria)
+                                            │
+                          ┌─────────────────┴─────────────────┐
+                          ▼                                   ▼
+              RUNTIME (prevista o PDF)                 CODEGEN (template C#)
+              DesignDocumentRenderer                 DesignToCSharpGenerator
+                     │                                       │
+                     ▼                                       ▼
+              QuestPDF API (directo)             FacturaUbl.cs (IInvoiceTemplate)
+              GeneratePdf()/GenerateImages()    ──► servicio Services.PdfGenerator
+                                                   (recompila y usa en producción)
+
+La misma ReportDesign tiene DOS consumidores: uno ejecuta QuestPDF en vivo
+(prevista del WinForms y el render "Exportar PDF"), el otro ESCRIBE código C#
+de un template autocontenido. Por eso lleva tiempo alinearlos: BandFit
+garantiza que ambos calculen lo mismo.
+
+
+--------------------------------------------------------------------------------
+1. MODELO: QUÉ ES UNA "SECCIÓN"
+--------------------------------------------------------------------------------
+
+Archivo: PdfDesigner.Engine\Model\ReportDesign.cs
+
+Clase                    │ Rol
+-------------------------┼-------------------------------------------------------
+ReportDesign             │ Raíz: Page, Metadata (NIT/cliente), Namespaces,
+                         │ Sections[] (orden de aparición), Expressions.
+SectionDesign            │ LA BANDA. Kind (reportHeader/pageHeader/groupHeader/
+                         │ detail/groupFooter/pageFooter/reportFooter/custom),
+                         │ Height, CanGrow, Visible, Background, BorderColor/
+                         │ BorderWidth, Repeat (XPath del detalle), GroupBy,
+                         │ Aggregates, Elements[].
+RepeatDesign             │ Xpath de los registros repetidos (ej. //Detalle) + alias.
+PageDesign / MarginDesign│ Tamaño/orientación/márgenes/fuente por defecto.
+TableColumnDesign        │ Columnas del elemento table (header, binding,
+                         │ width/relative, style).
+DesignMetadata           │ NIT, TemplateName, ClientName, Version → GetMetadata().
+
+Elemento base (PdfDesigner.Engine\Model\ElementDesign.cs):
+ElementDesign con posicionamiento absoluto dentro de la banda: X, Y, Width,
+Height, ZIndex, Visible, Style, Layout. Es polimórfico por "type":
+
+  Tipo       │ Clase               │ Qué renderiza
+  -----------┼---------------------┼--------------------------------------------
+  text/field │ TextElement /       │ texto estático / dato bindeado
+             │ FieldElement        │ (Binding.Xpath+Default, Format)
+  richtext   │ RichTextElement     │ spans con estilo
+  image      │ ImageElement        │ archivo/base64/XPath, Fit
+  line/shape │ LineElement/        │ líneas, formas
+             │ ShapeElement        │
+  checkbox   │ CheckBoxElement     │ cuadro + texto
+  table      │ TableElement        │ tabla QuestPDF con Repeat.Xpath + columnas
+  barcode    │ BarcodeElement      │ QR/código (ZXing)
+  pagebreak  │ PageBreakElement    │ column.Item().PageBreak()
+  subreport  │ SubReportElement    │ no soportado code-first
+
+Serialización: PdfDesigner.Engine\Model\DesignerJson.cs (camelCase, lee
+comentarios, tolera trailing commas). Load/Serialize.
+
+
+--------------------------------------------------------------------------------
+2. LA MATEMÁTICA COMPARTIDA DE ALTURAS (BANDFIT)
+--------------------------------------------------------------------------------
+
+Archivo: PdfDesigner.Engine\Layout\BandFit.cs
+Helper estático usado por LOS DOS consumidores para que prevista y C# den lo
+mismo:
+
+  SectionHeight(section, defFont)
+      - comprimir       → altura del contenido estimado
+      - CanGrow         → max(Height, bordeContenido + 4)
+      - si no           → Height
+  ElementBoxHeight(...) caja del elemento en modo comprimir.
+  Estimación de texto: fontSize x 1.35 por línea, wrap estimado
+      chars × fontSize × 0.5 / width.
+
+
+--------------------------------------------------------------------------------
+3. RENDERER RUNTIME: QUESTPDF EN VIVO
+--------------------------------------------------------------------------------
+
+Archivo: PdfDesigner.Engine\Rendering\DesignDocumentRenderer.cs (IDocument)
+
+Compose(container)
+ ├─ container.Page(page =>
+ │   ├─ ApplyPage(page)                       ⇒ Size/Orientation/Margins
+ │   ├─ page.DefaultTextStyle(...)            ⇒ fontSize/fontFamily/color
+ │   ├─ page.Header().Column(...)             ⇒ reportHeader (ShowOnce) + pageHeader
+ │   ├─ page.Footer().Column(...)             ⇒ pageFooter
+ │   └─ page.Content().Column(...)            ⇒ todo lo demás (grupos + detalle)
+
+Mapeo de Kind → slot de QuestPDF:
+
+  Kind               │ Destino QuestPDF
+  -------------------┼----------------------------------------------------------
+  reportHeader       │ page.Header() envuelto en .ShowOnce() (solo página 1)
+  pageHeader         │ page.Header(), se repite en cada página
+  pageFooter         │ page.Footer()
+  groupHeader/detail/│ page.Content().Column() en orden
+  groupFooter/       │
+  reportFooter/custom│
+
+ComposeContent(content, depth) — el "dispatcher" de contenido:
+  - Quita header/reportHeader del slice de contenido.
+  - Detecta si hay groupHeader (hasGroups).
+  - Sin grupos: si detail, resuelve DetailNodes(section) (XmlDataResolver.
+    ResolveNodes) y emite un item por nodo; si no hay datos, emite la banda una vez.
+  - Con grupos: firstGroupHeader/lastGroupFooter, BuildGroups agrupa los nodos por
+    GroupBy, y por cada grupo recorre el bloque groupHeader→groupFooter emitiendo
+    el detail por nodo.
+  - Emit local: si la sección tiene PageBreakElement, inserta
+    content.Item().PageBreak() antes (excepto la primera).
+
+ComposeSection(column, section, node, depth) — el corazón de la banda:
+
+  column.Item()
+    .Height(BandFit.SectionHeight(...))      (Height fijo hoy; P1 lo pasa a MinHeight)
+    [.Background] [.Border]
+    .Layers(layers =>
+    {
+        layers.PrimaryLayer();               (vacía hoy; P1 la convierte en ancla+fondo)
+        foreach elemento visible por ZIndex:
+            layers.Layer()
+              .TranslateX(item.X).TranslateY(item.Y)   posicionamiento absoluto
+              .Width(item.Width)
+              .MinHeight(item.Height)  ó  Height(comprimir)
+              .Element(cell => registry.Resolve(tipo).Render(cell, item, context))
+    })
+
+RenderContext (creado en ComposeSection) es un puñado de contexto: resolver XML,
+evaluador, design, nodo actual, ancho de contenido.
+
+Renderers de elementos (PdfDesigner.Engine\Rendering\ElementRenderers.cs):
+  - un renderer por tipo: TextElementRenderer, FieldElementRenderer (bindeo
+    Resolver.ResolveString + Formatting.Apply), RichText, Image, Line, Shape,
+    CheckBox, TableElementRenderer (Column ConstantColumn/RelativeColumn,
+    Header, filas por Repeat.Xpath), Barcode.
+  - ElementRendererRegistry.CreateDefault() — diccionario tipo→renderer.
+  - StyleApplicator — traduce StyleDesign/LayoutDesign → .Background/.Border/
+    .Align/.FontSize...
+
+
+--------------------------------------------------------------------------------
+4. CODEGEN: CÓMO SE ESCRIBE EL C# QUESTPDF
+--------------------------------------------------------------------------------
+
+Archivo: PdfDesigner.Engine\CodeGen\DesignToCSharpGenerator.cs
+Función pura Generate(design, map, className, ns) que devuelve el texto del
+template clase IInvoiceTemplate.
+
+Estructura que emite:
+
+  public class FacturaUbl : IInvoiceTemplate
+  {
+    static ctor (encoding)
+    byte[] GeneratePdf(model)              ⇒ Document.Create(Compose).GeneratePdf()
+    void PreviewOnQuestPDFCompanion(model) ⇒ ShowInCompanion()
+    void Compose(IDocumentContainer, model) ⇒ container.Page(page =>
+         page.DefaultTextStyle; page.Size(...);
+         page.Header().Column(ComposeHeader);
+         page.Content().Column(ComposeContent);
+         page.Footer().Column(ComposeFooter));
+    ComposeHeader   reportHeader ShowOnce + pageHeader sections
+    ComposeContent  el "dispatcher": foreach over model.Lines / .GroupBy
+    ComposeFooter   pageFooter sections
+    GetMetadata()   NIT, nombres, versión
+    MapToCustomDto(model) => model
+    helpers emitidos: CommonHelpers, LocalQrHelpers, SharedStyles
+  }
+
+EmitContentBody — espejo de ComposeContent del renderer:
+  - Sin grupos: el detail emite "foreach (var line in model.Lines) { EmitSection }";
+    secciones con PageBreakElement emiten content.Item().PageBreak();
+  - Con grupos: emite groupExpr desde GroupBy → model.Lines.GroupBy(line => ...);
+    cuando hay Aggregates genera el Select con sumas (g.Sum / g.First);
+    luego foreach (var grp in ...) y dentro el bloque groupHeader→groupFooter,
+    con el detail como "foreach (var line in grp)".
+
+EmitSection — el corazón, espejo exacto de ComposeSection:
+
+  var rowH = BandFit.SectionHeight(section, defFont);
+  content.Item().Height({rowH}f)            ← hoy; P1 → MinHeight
+    [.Background] [.Border]
+    .Layers(layers =>
+    {
+        layers.PrimaryLayer();              ← hoy vacía
+        foreach elemento:
+            layers.Layer()
+              .TranslateX(x).TranslateY(y)
+              .Width(w).MinHeight(h)  ó  .Height(comprimir)
+              .Element(cell => <estilo>.Text(Format(expr, ...)) ...)
+    })
+
+EmitElement — por tipo genera la llamada DSL:
+  - field      → Text(Format(Expr, "text")) + TextStyles
+  - rich       → Text(t => t.Span(...) ...)
+  - image      → SafeLoadImage(...).FitArea()
+  - line/shape → AlignMiddle().Height(thickness).Background(...) / DrawShape(...)
+  - checkbox   → DrawCheckBox(...)
+  - barcode    → DrawBarcode(chain, expr, symbology, height)
+  - table      → EmitTable: DSL tabla con "foreach (var line in model.Lines)"
+  - subreport  → // TODO
+
+El binding — ResolveExpr con BindingMap.Resolve (resuelve XPath→line.*/model.*)
+y DataContract. En el detalle inDetail=true → exprs line.Propiedad; fuera de
+detalle → model.*.
+
+Estilos — BoxChain (padding/background/border/rotate/vertical-align/align) y
+TextStyles (fontSize/bold/italic/underline/color) son la versión string de
+StyleApplicator. Es la divergencia que P4 quiere reducir.
+
+
+--------------------------------------------------------------------------------
+5. EJEMPLO CONCRETO (DETALLE DE EXPORTACIONES SAS)
+--------------------------------------------------------------------------------
+
+design.json detail bfc59334 (height:20, canGrow:false, repeat://Detalle, 3 fields):
+
+  X    Width  Y  Height  Binding           Style
+  0    30     0  20      @linea_nu → line.LineNumber    10pt, center, middle
+  30   240    0  20      @descripcion_tx → line.Description   10pt
+  280  20     0  20      @cantidad_nu → line.Quantity   10pt, center, middle
+
+Renderer produce efectivamente (nodo a nodo):
+
+  content.Item().Height(20f).Layers(layers =>
+  {
+      layers.PrimaryLayer();
+      layers.Layer().TranslateX(0f).TranslateY(0f).Width(30f).MinHeight(20f)
+          .Element(c => c.AlignCenter().AlignMiddle()
+              .Text(Format(resolver.ResolveString("@linea_nu", node), "text"))
+              .FontSize(10f));
+      layers.Layer().TranslateX(30f).TranslateY(0f).Width(240f).MinHeight(20f)
+          .Element(c => c.Text(Format(resolver... @descripcion_tx, "text")).FontSize(10f));
+      layers.Layer().TranslateX(280f).TranslateY(0f).Width(20f).MinHeight(20f)
+          .Element(c => c.AlignCenter().AlignMiddle()
+              .Text(Format(resolver... @cantidad_nu, "text")).FontSize(10f));
+  });
+
+Codegen escribe literalmente el mismo bloque: content.Item().Height(20f).Layers(
+layers => { layers.PrimaryLayer(); layers.Layer().TranslateX(30f, Unit.Point).
+TranslateY(0f, Unit.Point).Width(240f).MinHeight(20f).Element(cell => cell.Text(
+Format(line.Description, "text")).FontSize(10f)); });  — y el foreach sobre
+model.Lines lo agrega EmitContentBody.
+
+
+--------------------------------------------------------------------------------
+6. LOS "EXTREMOS" DEL SISTEMA
+--------------------------------------------------------------------------------
+
+UI: DesignerForm.BuildSectionProps expone propiedades de sección (Alto, Visible,
+Fondo/Borde, Repeat XPath, Group By, y los checkboxes CanGrow/Comprimir);
+ReportDesignSurface dibuja las bandas y valida solape (el.Y+el.Height ≤ section.Height).
+
+Prevista: RenderPreview y RenderPdf instancian DesignDocumentRenderer con el modelo
+y capturan excepciones — donde se está tragando la DocumentLayoutException.
+
+Exportación al servicio: Services.PdfGenerator recompila el C# generado con
+namespace del NIT (Services.PdfGenerator.Infrastructure.Templates._<NIT>).
+
+
+--------------------------------------------------------------------------------
+7. DÓNDE ATERRIZAN LOS PLANES APROBADOS (P1-P4)
+--------------------------------------------------------------------------------
+
+P1 (MinHeight + PrimaryLayer real)
+  → ComposeSection (DesignDocumentRenderer.cs) y EmitSection (generador):
+    sustituir .Height por .MinHeight; mover Background/Border al ancla de la
+    PrimaryLayer (contenido real que controla el paginado).
+
+P2 (EnsureSpace/ShowEntire)
+  → nuevas props en SectionDesign; aplicar en el chain de ComposeSection/
+    EmitSection; defaults al agrupar en ComposeContent/EmitContentBody
+    (groupHeader: header + fila detalle; groupFooter: footer; con guard ≤ 60% de página).
+
+P3 (detalle como tabla real)
+  → nuevo Layout\DetailTable.cs (deriva columnas de los field del detalle) y
+    ramas en el renderer TableElementRenderer y en EmitSection cuando
+    detail.RenderAsTable == true (filas auto-ajustadas, header repetido por página).
+
+P4 (UX y diagnóstico)
+  → ReportDesignSurface usa BandFit.SectionHeight para dibujar la banda;
+    manejo explícito de DocumentLayoutException en RenderPreview/RenderPdf
+    con pista de la banda culpable.
+
+================================================================================
+FIN DEL DOCUMENTO
+================================================================================

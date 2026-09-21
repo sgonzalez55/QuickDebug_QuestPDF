@@ -1,0 +1,135 @@
+{
+  "version": "3.0",
+  "page": {
+    "size": "Letter",
+    "orientation": "Portrait",
+    "width": 0,
+    "height": 0,
+    "margins": {
+      "top": 20,
+      "right": 20,
+      "bottom": 20,
+      "left": 20
+    },
+    "unit": "pt",
+    "fontFamily": "Liberation Sans",
+    "defaultFontSize": 10
+  },
+  "metadata": {
+    "nit": "",
+    "templateName": "SASASA_design",
+    "clientName": "SASASA",
+    "version": "1.0"
+  },
+  "namespaces": {
+    "dif": "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2",
+    "fe": "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2",
+    "clm54217": "urn:un:unece:uncefact:codelist:specification:54217:2001",
+    "clm66411": "urn:un:unece:uncefact:codelist:specification:66411:2001",
+    "clmIANAMIMEMediaType": "urn:un:unece:uncefact:codelist:specification:IANAMIMEMediaType:2003",
+    "qdt": "urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2",
+    "sac": "urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1",
+    "udt": "urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "inv": "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+  },
+  "header": {
+    "type": "column",
+    "id": "3fc80bfd",
+    "visible": true,
+    "children": [
+      {
+        "type": "container",
+        "id": "3effc3bb",
+        "name": "encabezado",
+        "visible": true,
+        "children": [
+          {
+            "type": "text",
+            "id": "debac848",
+            "name": "ce",
+            "visible": true,
+            "children": [],
+            "padding": {
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            },
+            "columns": [],
+            "showHeader": true,
+            "text": "ce",
+            "fit": "contain",
+            "direction": "horizontal",
+            "thickness": 1,
+            "spacerHeight": 12,
+            "style": {
+              "align": "center"
+            }
+          }
+        ],
+        "padding": {
+          "top": 8,
+          "right": 8,
+          "bottom": 8,
+          "left": 8
+        },
+        "columns": [],
+        "showHeader": true,
+        "fit": "contain",
+        "direction": "horizontal",
+        "thickness": 1,
+        "spacerHeight": 12
+      }
+    ],
+    "padding": {
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "columns": [],
+    "showHeader": true,
+    "fit": "contain",
+    "direction": "horizontal",
+    "thickness": 1,
+    "spacerHeight": 12
+  },
+  "content": {
+    "type": "column",
+    "id": "cabba3ff",
+    "visible": true,
+    "children": [],
+    "padding": {
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "columns": [],
+    "showHeader": true,
+    "fit": "contain",
+    "direction": "horizontal",
+    "thickness": 1,
+    "spacerHeight": 12
+  },
+  "footer": {
+    "type": "column",
+    "id": "0bbef36d",
+    "visible": true,
+    "children": [],
+    "padding": {
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "columns": [],
+    "showHeader": true,
+    "fit": "contain",
+    "direction": "horizontal",
+    "thickness": 1,
+    "spacerHeight": 12
+  },
+  "expressions": {}
+}

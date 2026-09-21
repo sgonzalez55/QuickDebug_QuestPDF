@@ -1,0 +1,204 @@
+{
+  "version": "2.0",
+  "page": {
+    "size": "Letter",
+    "orientation": "Portrait",
+    "width": 0,
+    "height": 0,
+    "margins": {
+      "top": 20,
+      "right": 20,
+      "bottom": 20,
+      "left": 20
+    },
+    "unit": "pt",
+    "fontFamily": "Liberation Sans",
+    "defaultFontSize": 10
+  },
+  "metadata": {
+    "nit": "900111222",
+    "templateName": "REAL",
+    "clientName": "Designer",
+    "version": "1.0"
+  },
+  "namespaces": {},
+  "sections": [
+    {
+      "id": "c2253c6a",
+      "kind": "reportHeader",
+      "height": 80,
+      "canGrow": false,
+      "visible": true,
+      "elements": [
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.Issuer.Address",
+            "default": "Calle 100 # 15-20"
+          },
+          "format": "text",
+          "x": 220,
+          "y": 10,
+          "width": 160,
+          "height": 18,
+          "zIndex": 0,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.Issuer.City",
+            "default": "Valle del Cauca"
+          },
+          "format": "text",
+          "x": 220,
+          "y": 20,
+          "width": 160,
+          "height": 18,
+          "zIndex": 1,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.Issuer.Name",
+            "default": "SIESA DE PRUEBAS S.A.S."
+          },
+          "format": "text",
+          "x": 220,
+          "y": 0,
+          "width": 160,
+          "height": 18,
+          "zIndex": 2,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b8d30f08",
+      "kind": "pageHeader",
+      "height": 60,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "f898b8f8",
+      "kind": "groupHeader",
+      "height": 30,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "836e709f",
+      "kind": "detail",
+      "height": 20,
+      "canGrow": false,
+      "visible": true,
+      "repeat": {
+        "xpath": "//Detalle",
+        "alias": ""
+      },
+      "elements": [
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "@descripcion_tx",
+            "expr": "line.Description",
+            "default": "Licencia de software m\u00F3dulo facturaci\u00F3n - anual"
+          },
+          "format": "text",
+          "x": -0,
+          "y": -0,
+          "width": 230,
+          "height": 20,
+          "zIndex": 0,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "@linea_nu",
+            "expr": "line.LineNumber",
+            "default": "1"
+          },
+          "format": "text",
+          "x": 220,
+          "y": 0,
+          "width": 160,
+          "height": 18,
+          "zIndex": 1,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "@cantidad_nu",
+            "expr": "line.Quantity",
+            "default": "2.00"
+          },
+          "format": "text",
+          "x": 230,
+          "y": 0,
+          "width": 160,
+          "height": 18,
+          "zIndex": 2,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2c9b1933",
+      "kind": "groupFooter",
+      "height": 24,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "8f86bdc9",
+      "kind": "pageFooter",
+      "height": 30,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "38b1dcc3",
+      "kind": "reportFooter",
+      "height": 64,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    }
+  ],
+  "expressions": {}
+}

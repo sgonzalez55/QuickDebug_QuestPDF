@@ -1,0 +1,155 @@
+╔═══════════════════════════════════════════════════════════════╗
+║           PDF QUICK DEBUG - INICIO RÁPIDO                     ║
+╚═══════════════════════════════════════════════════════════════╝
+
+🎯 OBJETIVO: Debugear y modificar PDFs con datos reales
+
+═══════════════════════════════════════════════════════════════
+
+📋 PASO 1: CONFIGURAR RUTAS (30 segundos)
+
+1. Abrir archivo: PdfQuickDebug\Program.cs
+
+2. Editar líneas 16-18 (COPIAR/PEGAR tus rutas):
+
+   const string XML_PATH = @"F:\tu\ruta\xml.xml";
+   const string XSLT_PATH = @"e:\tu\ruta\xslt.xml";
+   const string OUTPUT_PDF = @"F:\tu\ruta\OUTPUT.pdf";
+
+3. Guardar (Ctrl+S)
+
+═══════════════════════════════════════════════════════════════
+
+🚀 PASO 2: EJECUTAR (10 segundos)
+
+1. Abrir terminal en: F:\Pruebas de Formatos Masivos\DebugPDF\PdfQuickDebug
+
+2. Ejecutar:
+   dotnet run
+
+3. Ver PDF generado en la ruta OUTPUT_PDF
+
+═══════════════════════════════════════════════════════════════
+
+🐛 PASO 3: DEBUGGING CON VS CODE
+
+Método A: DEBUGGING COMPLETO
+
+1. Abrir proyecto en VS Code:
+   code "F:\Pruebas de Formatos Masivos\DebugPDF\PdfQuickDebug"
+
+2. Abrir Program.cs
+
+3. Hacer click en número de línea 74 (aparece punto rojo) ←  BREAKPOINT
+
+4. Presionar F5 (o Debug > Start Debugging)
+
+5. El código se detiene en línea 74
+
+6. Inspeccionar variable "transformedXml" (hacer hover o ver panel VARIABLES)
+
+7. Presionar F10 para avanzar línea por línea
+
+8. Inspeccionar otras variables: model, pdfBytes, etc.
+
+Método B: VER VARIABLES EN CONSOLA
+
+1. Agregar en Program.cs (después de línea 91):
+
+   Console.WriteLine($"Total: {model.Totals.Total}");
+   Console.WriteLine($"Cliente: {model.Customer.Name}");
+
+2. Ejecutar: dotnet run
+
+3. Ver valores en consola
+
+═══════════════════════════════════════════════════════════════
+
+💡 PASO 4: MODIFICAR DISEÑO DEL PDF
+
+1. Abrir: Templates\FacturaUbl.cs
+
+2. Cambiar algo (ejemplo: logo más grande):
+
+   BUSCAR:   c.Height(48).Image(logoBytes)
+   CAMBIAR:  c.Height(80).Image(logoBytes)
+
+3. Guardar (Ctrl+S)
+
+4. Ejecutar de nuevo: dotnet run
+
+5. Ver cambio en nuevo PDF
+
+═══════════════════════════════════════════════════════════════
+
+📁 BREAKPOINTS ÚTILES:
+
+Program.cs:
+   Línea 74  → Ver XML transformado (transformedXml)
+   Línea 91  → Ver modelo parseado (model)
+   Línea 118 → Ver PDF generado (pdfBytes)
+
+Templates/FacturaUbl.cs:
+   Línea 66  → Ver logo cargado (logoBytes)
+
+═══════════════════════════════════════════════════════════════
+
+🎨 CAMBIOS VISUALES COMUNES:
+
+1. Logo más grande:
+   BUSCAR: Height(48)
+   CAMBIAR: Height(80)
+
+2. Título más grande:
+   BUSCAR: FontSize(9.5f)
+   CAMBIAR: FontSize(12f)
+
+3. Cambiar color título:
+   BUSCAR: FontColor(BrandColors.TextBlack)
+   CAMBIAR: FontColor("#FF0000")  ← rojo
+
+4. Más espacio entre secciones:
+   BUSCAR: PaddingTop(3.5f)
+   CAMBIAR: PaddingTop(5f)
+
+═══════════════════════════════════════════════════════════════
+
+🆘 TROUBLESHOOTING:
+
+"XML no encontrado"
+→ Verificar ruta en línea 16 de Program.cs
+
+"XSLT no encontrado"
+→ Verificar ruta en línea 17 de Program.cs
+
+"Logo no aparece"
+→ Poner breakpoint en Templates/FacturaUbl.cs línea 66
+→ Ver si logoBytes es null
+→ Verificar CustomField "LogoBase64" existe y tiene prefijo "data:image/"
+
+"Error al compilar"
+→ dotnet clean && dotnet build
+
+═══════════════════════════════════════════════════════════════
+
+✅ CHECKLIST PRIMERA VEZ:
+
+□ Configurar rutas en Program.cs líneas 16-18
+□ Ejecutar: dotnet run
+□ Verificar PDF generado
+□ Abrir proyecto en VS Code
+□ Poner breakpoint en línea 74
+□ Presionar F5 para debugging
+□ Inspeccionar variable transformedXml
+□ Modificar algo en Templates/FacturaUbl.cs
+□ Regenerar PDF y ver cambio
+
+═══════════════════════════════════════════════════════════════
+
+📖 MÁS INFORMACIÓN:
+
+Ver archivo: README.md (documentación completa)
+
+═══════════════════════════════════════════════════════════════
+
+¡LISTO PARA DEBUGEAR! 🎉

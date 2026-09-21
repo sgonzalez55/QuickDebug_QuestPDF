@@ -1,0 +1,395 @@
+{
+  "version": "1.0",
+  "fields": [
+    {
+      "name": "f_codigo_barra_principal_1",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027f_codigo_barra_principal_1\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022f_codigo_barra_principal_1\u0022)"
+    },
+    {
+      "name": "f_codigo_barra_principal_2",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027f_codigo_barra_principal_2\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022f_codigo_barra_principal_2\u0022)"
+    },
+    {
+      "name": "f_condicion_pago",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027f_condicion_pago\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022f_condicion_pago\u0022)"
+    },
+    {
+      "name": "f_factor_emp_1",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027f_factor_emp_1\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022f_factor_emp_1\u0022)"
+    },
+    {
+      "name": "f_factor_emp_2",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027f_factor_emp_2\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022f_factor_emp_2\u0022)"
+    },
+    {
+      "name": "f_factor_empaque_1",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027f_factor_empaque_1\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022f_factor_empaque_1\u0022)"
+    },
+    {
+      "name": "f_factor_empaque_2",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027f_factor_empaque_2\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022f_factor_empaque_2\u0022)"
+    },
+    {
+      "name": "f_fecha_dian",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027f_fecha_dian\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022f_fecha_dian\u0022)"
+    },
+    {
+      "name": "f_motivo_1",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027f_motivo_1\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022f_motivo_1\u0022)"
+    },
+    {
+      "name": "f_motivo_2",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027f_motivo_2\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022f_motivo_2\u0022)"
+    },
+    {
+      "name": "f_orden_compra",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027f_orden_compra\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022f_orden_compra\u0022)"
+    },
+    {
+      "name": "f_um_emp_1",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027f_um_emp_1\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022f_um_emp_1\u0022)"
+    },
+    {
+      "name": "f_um_emp_2",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027f_um_emp_2\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022f_um_emp_2\u0022)"
+    },
+    {
+      "name": "LogoBase64",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027LogoBase64\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022LogoBase64\u0022)"
+    },
+    {
+      "name": "NumPedido",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027NumPedido\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022NumPedido\u0022)"
+    },
+    {
+      "name": "ResolucionTexto",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027ResolucionTexto\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022ResolucionTexto\u0022)"
+    },
+    {
+      "name": "ValorLetras",
+      "group": "Custom",
+      "xpath": "//Adicional/Campo[@clave=\u0027ValorLetras\u0027]/@valor",
+      "expr": "GetCustomField(model, \u0022ValorLetras\u0022)"
+    },
+    {
+      "name": "CodigosBarra",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.CodigosBarra"
+    },
+    {
+      "name": "CondicionPago",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.CondicionPago"
+    },
+    {
+      "name": "Factores",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.Factores"
+    },
+    {
+      "name": "FechaDian",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.FechaDian"
+    },
+    {
+      "name": "HoraGeneracion",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.HoraGeneracion"
+    },
+    {
+      "name": "LogoBase64",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.LogoBase64"
+    },
+    {
+      "name": "Motivos",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.Motivos"
+    },
+    {
+      "name": "NumCargue",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.NumCargue"
+    },
+    {
+      "name": "NumPedido",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.NumPedido"
+    },
+    {
+      "name": "OrdenCompra",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.OrdenCompra"
+    },
+    {
+      "name": "PlacaVehiculo",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.PlacaVehiculo"
+    },
+    {
+      "name": "ResolucionTexto",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.ResolucionTexto"
+    },
+    {
+      "name": "Ruta",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.Ruta"
+    },
+    {
+      "name": "ValorLetras",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.ValorLetras"
+    },
+    {
+      "name": "Zona",
+      "group": "DTO",
+      "xpath": "",
+      "expr": "dto.Zona"
+    },
+    {
+      "name": "Additional.Notes",
+      "group": "Modelo",
+      "xpath": "//CFD/Documento/@comentario_ds",
+      "expr": "model.Additional.Notes"
+    },
+    {
+      "name": "Customer.Address",
+      "group": "Modelo",
+      "xpath": "//CFD/Receptor/@direccion_tx",
+      "expr": "model.Customer.Address"
+    },
+    {
+      "name": "Customer.City",
+      "group": "Modelo",
+      "xpath": "//CFD/Receptor/@ciudad_tx",
+      "expr": "model.Customer.City"
+    },
+    {
+      "name": "Customer.Email",
+      "group": "Modelo",
+      "xpath": "//CFD/Receptor/@email_recepcion_ds",
+      "expr": "model.Customer.Email"
+    },
+    {
+      "name": "Customer.Name",
+      "group": "Modelo",
+      "xpath": "//CFD/Receptor/@nombre_comercial_ds",
+      "expr": "model.Customer.Name"
+    },
+    {
+      "name": "Customer.Phone",
+      "group": "Modelo",
+      "xpath": "//CFD/Receptor/@TelefonoReceptor",
+      "expr": "model.Customer.Phone"
+    },
+    {
+      "name": "Customer.TaxId",
+      "group": "Modelo",
+      "xpath": "//CFD/Receptor/@nit_cd",
+      "expr": "model.Customer.TaxId"
+    },
+    {
+      "name": "Document.CUFE",
+      "group": "Modelo",
+      "xpath": "//CFD/Documento/@firma_digital",
+      "expr": "model.Document.CUFE"
+    },
+    {
+      "name": "Document.DueDate",
+      "group": "Modelo",
+      "xpath": "//CFD/Documento/@fecha_vencimiento_fe",
+      "expr": "model.Document.DueDate"
+    },
+    {
+      "name": "Document.IssueDate",
+      "group": "Modelo",
+      "xpath": "//CFD/Documento/@fecha_emision_fe",
+      "expr": "model.Document.IssueDate"
+    },
+    {
+      "name": "Document.Number",
+      "group": "Modelo",
+      "xpath": "//CFD/Documento/@numero_cd",
+      "expr": "model.Document.Number"
+    },
+    {
+      "name": "Issuer.Address",
+      "group": "Modelo",
+      "xpath": "//CFD/Emisor/@direccion_temp",
+      "expr": "model.Issuer.Address"
+    },
+    {
+      "name": "Issuer.City",
+      "group": "Modelo",
+      "xpath": "//CFD/Receptor/@ciudad_tx",
+      "expr": "model.Issuer.City"
+    },
+    {
+      "name": "Issuer.Email",
+      "group": "Modelo",
+      "xpath": "//CFD/Emisor/@email_temp",
+      "expr": "model.Issuer.Email"
+    },
+    {
+      "name": "Issuer.Name",
+      "group": "Modelo",
+      "xpath": "//CFD/Emisor/@nombre_comercial_temp",
+      "expr": "model.Issuer.Name"
+    },
+    {
+      "name": "Issuer.Phone",
+      "group": "Modelo",
+      "xpath": "//CFD/Emisor/@telefono_temp",
+      "expr": "model.Issuer.Phone"
+    },
+    {
+      "name": "Issuer.TaxId",
+      "group": "Modelo",
+      "xpath": "//CFD/Emisor/@nit_cd",
+      "expr": "model.Issuer.TaxId"
+    },
+    {
+      "name": "line.Codigo_cd",
+      "group": "Modelo",
+      "xpath": "@codigo_cd",
+      "expr": "line.Codigo_cd"
+    },
+    {
+      "name": "line.Description",
+      "group": "Modelo",
+      "xpath": "@descripcion_tx",
+      "expr": "line.Description"
+    },
+    {
+      "name": "line.Discount",
+      "group": "Modelo",
+      "xpath": "@descuento_am",
+      "expr": "line.Discount"
+    },
+    {
+      "name": "line.Ibua",
+      "group": "Modelo",
+      "xpath": "@ibua",
+      "expr": "line.Ibua"
+    },
+    {
+      "name": "line.LineTotal",
+      "group": "Modelo",
+      "xpath": "@total_linea_am",
+      "expr": "line.LineTotal"
+    },
+    {
+      "name": "line.PrecioAntesIVA",
+      "group": "Modelo",
+      "xpath": "@item_subtotal_am",
+      "expr": "line.PrecioAntesIVA"
+    },
+    {
+      "name": "line.Quantity",
+      "group": "Modelo",
+      "xpath": "@cantidad_nu",
+      "expr": "line.Quantity"
+    },
+    {
+      "name": "line.TaxRate",
+      "group": "Modelo",
+      "xpath": "@impuesto_tasa_nu",
+      "expr": "line.TaxRate"
+    },
+    {
+      "name": "line.TaxValor",
+      "group": "Modelo",
+      "xpath": "@item_imp_am",
+      "expr": "line.TaxValor"
+    },
+    {
+      "name": "line.Unit",
+      "group": "Modelo",
+      "xpath": "@unidad_medida_cd",
+      "expr": "line.Unit"
+    },
+    {
+      "name": "line.UnitPrice",
+      "group": "Modelo",
+      "xpath": "@precio_unitario_am",
+      "expr": "line.UnitPrice"
+    },
+    {
+      "name": "line.ValorDescuento",
+      "group": "Modelo",
+      "xpath": "@vlr_descuento",
+      "expr": "line.ValorDescuento"
+    },
+    {
+      "name": "Totals.Subtotal",
+      "group": "Modelo",
+      "xpath": "//CFD/Documento/@subtotal_am",
+      "expr": "model.Totals.Subtotal"
+    },
+    {
+      "name": "Totals.Total",
+      "group": "Modelo",
+      "xpath": "//CFD/Documento/@total_am",
+      "expr": "model.Totals.Total"
+    },
+    {
+      "name": "Totals.TotalDiscount",
+      "group": "Modelo",
+      "xpath": "//CFD/Documento/@descuentos_am",
+      "expr": "model.Totals.TotalDiscount"
+    },
+    {
+      "name": "Totals.TotalTax",
+      "group": "Modelo",
+      "xpath": "//CFD/Documento/@impuestos_am",
+      "expr": "model.Totals.TotalTax"
+    }
+  ]
+}

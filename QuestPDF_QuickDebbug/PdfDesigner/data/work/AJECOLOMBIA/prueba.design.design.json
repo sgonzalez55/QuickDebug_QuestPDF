@@ -1,0 +1,88 @@
+{
+  "version": "2.0",
+  "page": {
+    "size": "Letter",
+    "orientation": "Portrait",
+    "width": 0,
+    "height": 0,
+    "margins": {
+      "top": 20,
+      "right": 20,
+      "bottom": 20,
+      "left": 20
+    },
+    "unit": "pt",
+    "fontFamily": "Liberation Sans",
+    "defaultFontSize": 10
+  },
+  "metadata": {
+    "nit": "",
+    "templateName": "prueba.design.design",
+    "clientName": "Designer",
+    "version": "1.0"
+  },
+  "namespaces": {},
+  "sections": [
+    {
+      "id": "760c609c",
+      "kind": "reportHeader",
+      "height": 80,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "99c8487d",
+      "kind": "pageHeader",
+      "height": 60,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "0ee6db79",
+      "kind": "groupHeader",
+      "height": 30,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "43a2065b",
+      "kind": "detail",
+      "height": 110,
+      "canGrow": false,
+      "visible": true,
+      "repeat": {
+        "xpath": "",
+        "alias": ""
+      },
+      "elements": []
+    },
+    {
+      "id": "d806b260",
+      "kind": "groupFooter",
+      "height": 24,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "4b5cc32d",
+      "kind": "pageFooter",
+      "height": 30,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "6628b8d7",
+      "kind": "reportFooter",
+      "height": 64,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    }
+  ],
+  "expressions": {}
+}

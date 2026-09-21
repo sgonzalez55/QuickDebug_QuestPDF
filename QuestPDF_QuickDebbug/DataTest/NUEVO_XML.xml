@@ -1,0 +1,745 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Invoice
+  xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+  xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+  xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
+  xmlns:sts="dian:gov:co:facturaelectronica:Structures-2-1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"
+  xmlns:xades141="http://uri.etsi.org/01903/v1.4.1#"
+  xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+  xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
+>
+  <ext:UBLExtensions>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <sts:DianExtensions>
+          <sts:InvoiceControl>
+            <sts:InvoiceAuthorization>18764096084528</sts:InvoiceAuthorization>
+            <sts:AuthorizationPeriod>
+              <cbc:StartDate>2025-07-25</cbc:StartDate>
+              <cbc:EndDate>2027-07-25</cbc:EndDate>
+            </sts:AuthorizationPeriod>
+            <sts:AuthorizedInvoices>
+              <sts:Prefix>CBPA</sts:Prefix>
+              <sts:From>1</sts:From>
+              <sts:To>25000000</sts:To>
+            </sts:AuthorizedInvoices>
+          </sts:InvoiceControl>
+          <sts:InvoiceSource>
+            <cbc:IdentificationCode
+              listAgencyID="6"
+              listAgencyName="United Nations Economic Commission for Europe"
+              listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.1"
+              >CO</cbc:IdentificationCode
+            >
+          </sts:InvoiceSource>
+          <sts:SoftwareProvider>
+            <sts:ProviderID
+              schemeID="3"
+              schemeName="31"
+              schemeAgencyID="195"
+              schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+              >890319193</sts:ProviderID
+            >
+            <sts:SoftwareID
+              schemeAgencyID="195"
+              schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+              >363dbee8-27ce-4c85-b588-85d3c4611026</sts:SoftwareID
+            >
+          </sts:SoftwareProvider>
+          <sts:SoftwareSecurityCode
+            schemeAgencyID="195"
+            schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+            >45339c4ecf2a0542a42aec7a931b71d4d92b8c76f2f218ee5b2db9e1a8f699f077357ccfe1c93fda9cf96330cc031e89</sts:SoftwareSecurityCode
+          >
+          <sts:AuthorizationProvider>
+            <sts:AuthorizationProviderID
+              schemeAgencyID="195"
+              schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+              schemeID="4"
+              schemeName="31"
+              >800197268</sts:AuthorizationProviderID
+            >
+          </sts:AuthorizationProvider>
+          <sts:QRCode>https://catalogo-vpfe.dian.gov.co/document/searchqr?documentkey=9f33cf05241e2612ea4139d17e4fadab4516e4c489f02b5003d71817f39ae9eabc27a2c4879aa85ea4eab8aa9947c16a</sts:QRCode>
+        </sts:DianExtensions>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <ds:Signature
+          Id="xmldsig-4e5ea6f8-eab4-41f6-a866-21c27c3041a9"
+          xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+        >
+          <ds:SignedInfo>
+            <ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+            <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" />
+            <ds:Reference Id="xmldsig-4e5ea6f8-eab4-41f6-a866-21c27c3041a9-ref0" URI="">
+              <ds:Transforms>
+                <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+              </ds:Transforms>
+              <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+              <ds:DigestValue>DRL33rPSNb99QQD/VISm+RfJMuYSgRApF8IzlXgMkJE=</ds:DigestValue>
+            </ds:Reference>
+            <ds:Reference Id="xmldsig-4e5ea6f8-eab4-41f6-a866-21c27c3041a9-ref1" URI="#KeyInfo">
+              <ds:Transforms>
+                <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+              </ds:Transforms>
+              <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+              <ds:DigestValue>gb1O+HmeEMA650/VXzMPYmZiH+98Yh7eUm8Lt+eusp8=</ds:DigestValue>
+            </ds:Reference>
+            <ds:Reference
+              Id="xmldsig-4e5ea6f8-eab4-41f6-a866-21c27c3041a9-ref2"
+              URI="#SignedPropertiesId"
+              Type="http://uri.etsi.org/01903#SignedProperties"
+            >
+              <ds:Transforms>
+                <ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+              </ds:Transforms>
+              <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+              <ds:DigestValue>dGoSD9SeRIRCp8k9ciKcrisTWKV7LnQbdCryoIjr6m4=</ds:DigestValue>
+            </ds:Reference>
+          </ds:SignedInfo>
+          <ds:SignatureValue>DZrIgUgK97oiK0exrPHBetX3wIAx79KH0Odlpg6yaby2r4CXyyrh8JLt8Tl/Q42L+6Nv/MgMu3JcCrJ2YO8KFsTXBF7dP/HrBvVYUAKrY5wxXjVoiG22n8F2Hq2sfJfggooJ1DO4fGk1CMzu321ezs+ZBog0b5mRyT5QqMWQb4wKk/q4ulPI6KfimKfTlseJwGIGnoAZE+P3nR428b6KxlZu0RKSo4miYGFy+pwWRSM8pBHNUi6CwscOFVZ9hfariPg2le9vNw6Qc0311L34sUYenN7gcB9z57zG2akf8CO0sC4apXUV6rnDP+GUPPkyWK4+wcshz0ed9e2VNRQ2dw==</ds:SignatureValue>
+          <ds:KeyInfo Id="KeyInfo">
+            <ds:X509Data>
+              <ds:X509Certificate>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</ds:X509Certificate>
+            </ds:X509Data>
+          </ds:KeyInfo>
+          <ds:Object>
+            <xades:QualifyingProperties
+              Target="#xmldsig-4e5ea6f8-eab4-41f6-a866-21c27c3041a9"
+              xmlns:xades="http://uri.etsi.org/01903/v1.3.2#"
+              xmlns:xades141="http://uri.etsi.org/01903/v1.4.1#"
+            >
+              <xades:SignedProperties Id="SignedPropertiesId">
+                <xades:SignedSignatureProperties>
+                  <xades:SigningTime>2026-09-12T07:01:04.000-05:00</xades:SigningTime>
+                  <xades:SigningCertificate>
+                    <xades:Cert>
+                      <xades:CertDigest>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                        <ds:DigestValue>PwMo49FY9cs8Yj0PRCY47LFoAFvr6rJpJY8vfRy241c=</ds:DigestValue>
+                      </xades:CertDigest>
+                      <xades:IssuerSerial>
+                        <ds:X509IssuerName>C=CO, L=Bogota D.C., O=Andes SCD, OU=Division de certificacion entidad final, CN=CA ANDES SCD S.A. Clase II v3, E=info@andesscd.com.co</ds:X509IssuerName>
+                        <ds:X509SerialNumber>2369445816129803914</ds:X509SerialNumber>
+                      </xades:IssuerSerial>
+                    </xades:Cert>
+                  </xades:SigningCertificate>
+                  <xades:SignaturePolicyIdentifier>
+                    <xades:SignaturePolicyId>
+                      <xades:SigPolicyId>
+                        <xades:Identifier>https://facturaelectronica.dian.gov.co/politicadefirma/v2/politicadefirmav2.pdf</xades:Identifier>
+                      </xades:SigPolicyId>
+                      <xades:SigPolicyHash>
+                        <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256" />
+                        <ds:DigestValue>dMoMvtcG5aIzgYo0tIsSQeVJBDnUnfSOfBpxXrmor0Y=</ds:DigestValue>
+                      </xades:SigPolicyHash>
+                    </xades:SignaturePolicyId>
+                  </xades:SignaturePolicyIdentifier>
+                  <xades:SignerRole>
+                    <xades:ClaimedRoles>
+                      <xades:ClaimedRole>third party</xades:ClaimedRole>
+                    </xades:ClaimedRoles>
+                  </xades:SignerRole>
+                </xades:SignedSignatureProperties>
+              </xades:SignedProperties>
+            </xades:QualifyingProperties>
+          </ds:Object>
+        </ds:Signature>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+    <ext:UBLExtension>
+      <ext:ExtensionContent>
+        <CustomFieldExtension>
+          <CustomField Name="CPDF" Value="factura-ubl" />
+          <CustomField
+            Name="f_20_00003980_M201_NOMBRE_DE_NEGOCIO"
+            Value="YUDDY NATALY CAMACHO DIAZ"
+          />
+          <CustomField Name="f_20_00007591_G502_1_ZONA" Value="" />
+          <CustomField Name="f_20_00007592_G502_1_RUTA" Value="" />
+          <CustomField Name="f_cargue" Value="" />
+          <CustomField Name="f_cliente_fact_razon_soc" Value="CAMACHO DIAZ YUDDY NATALY" />
+          <CustomField Name="f_direccion1_env" Value="BAR GALAN" />
+          <CustomField Name="f_direccion2_env" Value="CL 54 # 4 D - 13" />
+          <CustomField Name="f_vehiculo_cargue" Value="" />
+        </CustomFieldExtension>
+      </ext:ExtensionContent>
+    </ext:UBLExtension>
+  </ext:UBLExtensions>
+  <cbc:UBLVersionID>UBL 2.1</cbc:UBLVersionID>
+  <cbc:CustomizationID>10</cbc:CustomizationID>
+  <cbc:ProfileID>DIAN 2.1: Factura Electrónica de Venta</cbc:ProfileID>
+  <cbc:ProfileExecutionID>1</cbc:ProfileExecutionID>
+  <cbc:ID>CBPA1648029</cbc:ID>
+  <cbc:UUID schemeID="1" schemeName="CUFE-SHA384"
+    >9f33cf05241e2612ea4139d17e4fadab4516e4c489f02b5003d71817f39ae9eabc27a2c4879aa85ea4eab8aa9947c16a</cbc:UUID
+  >
+  <cbc:IssueDate>2026-09-12</cbc:IssueDate>
+  <cbc:IssueTime>07:01:04-05:00</cbc:IssueTime>
+  <cbc:DueDate>2026-11-12</cbc:DueDate>
+  <cbc:InvoiceTypeCode>01</cbc:InvoiceTypeCode>
+  <cbc:DocumentCurrencyCode>COP</cbc:DocumentCurrencyCode>
+  <cbc:LineCountNumeric>7</cbc:LineCountNumeric>
+  <cac:InvoicePeriod>
+    <cbc:StartDate>2026-09-12</cbc:StartDate>
+    <cbc:EndDate>2026-09-12</cbc:EndDate>
+  </cac:InvoicePeriod>
+  <cac:OrderReference>
+    <cbc:ID>AB2B523</cbc:ID>
+    <cbc:SalesOrderID>B2B-00000246</cbc:SalesOrderID>
+    <cbc:IssueDate>2026-09-11</cbc:IssueDate>
+  </cac:OrderReference>
+  <cac:AccountingSupplierParty>
+    <cbc:AdditionalAccountID>1</cbc:AdditionalAccountID>
+    <cac:Party>
+      <cac:PartyName>
+        <cbc:Name>AJECOLOMBIA S.A.S</cbc:Name>
+      </cac:PartyName>
+      <cac:PhysicalLocation>
+        <cac:Address>
+          <cbc:ID>25286</cbc:ID>
+          <cbc:CityName>Funza</cbc:CityName>
+          <cbc:CountrySubentity>Cundinamarca</cbc:CountrySubentity>
+          <cbc:CountrySubentityCode>25</cbc:CountrySubentityCode>
+          <cac:AddressLine>
+            <cbc:Line>KM 2 VIA FUNZA SIBERIA PARQ IND SAN ANTO</cbc:Line>
+          </cac:AddressLine>
+          <cac:Country>
+            <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+            <cbc:Name languageID="es">Colombia</cbc:Name>
+          </cac:Country>
+        </cac:Address>
+      </cac:PhysicalLocation>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>AJECOLOMBIA S.A.S.</cbc:RegistrationName>
+        <cbc:CompanyID
+          schemeAgencyID="195"
+          schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+          schemeID="1"
+          schemeName="31"
+          >830081407</cbc:CompanyID
+        >
+        <cbc:TaxLevelCode listName="48">R-99-PN</cbc:TaxLevelCode>
+        <cac:RegistrationAddress>
+          <cbc:ID>25286</cbc:ID>
+          <cbc:CityName>Funza</cbc:CityName>
+          <cbc:CountrySubentity>Cundinamarca</cbc:CountrySubentity>
+          <cbc:CountrySubentityCode>25</cbc:CountrySubentityCode>
+          <cac:AddressLine>
+            <cbc:Line>KM 2 VIA FUNZA SIBERIA PARQ IND SAN ANTO</cbc:Line>
+          </cac:AddressLine>
+          <cac:Country>
+            <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+            <cbc:Name languageID="es">Colombia</cbc:Name>
+          </cac:Country>
+        </cac:RegistrationAddress>
+        <cac:TaxScheme>
+          <cbc:ID>01</cbc:ID>
+          <cbc:Name>IVA</cbc:Name>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>AJECOLOMBIA S.A.S.</cbc:RegistrationName>
+        <cbc:CompanyID
+          schemeAgencyID="195"
+          schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+          schemeID="1"
+          schemeName="31"
+          >830081407</cbc:CompanyID
+        >
+        <cac:CorporateRegistrationScheme>
+          <cbc:ID>CBPA</cbc:ID>
+          <cbc:Name>02</cbc:Name>
+        </cac:CorporateRegistrationScheme>
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>FABIAN DANIEL MOSQUERA VERA</cbc:Name>
+        <cbc:Telephone>6015939070</cbc:Telephone>
+        <cbc:ElectronicMail>facturacion.electronica.co@ajegroup.com</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:AccountingSupplierParty>
+  <cac:AccountingCustomerParty>
+    <cbc:AdditionalAccountID>2</cbc:AdditionalAccountID>
+    <cac:Party>
+      <cac:PartyIdentification>
+        <cbc:ID schemeID="13" schemeName="13">37535872</cbc:ID>
+      </cac:PartyIdentification>
+      <cac:PartyName>
+        <cbc:Name>YUDDY NATALY CAMACHO DIAZ</cbc:Name>
+      </cac:PartyName>
+      <cac:PhysicalLocation>
+        <cac:Address>
+          <cbc:ID>05306</cbc:ID>
+          <cbc:CityName>Giraldo</cbc:CityName>
+          <cbc:CountrySubentity>05</cbc:CountrySubentity>
+          <cbc:CountrySubentityCode>05</cbc:CountrySubentityCode>
+          <cac:AddressLine>
+            <cbc:Line>BAR GALAN</cbc:Line>
+          </cac:AddressLine>
+          <cac:Country>
+            <cbc:IdentificationCode>CO</cbc:IdentificationCode>
+            <cbc:Name languageID="es">Colombia</cbc:Name>
+          </cac:Country>
+        </cac:Address>
+      </cac:PhysicalLocation>
+      <cac:PartyTaxScheme>
+        <cbc:RegistrationName>CAMACHO DIAZ YUDDY NATALY</cbc:RegistrationName>
+        <cbc:CompanyID
+          schemeAgencyID="195"
+          schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+          schemeName="13"
+          >37535872</cbc:CompanyID
+        >
+        <cbc:TaxLevelCode listName="48">R-99-PN</cbc:TaxLevelCode>
+        <cac:TaxScheme>
+          <cbc:ID>01</cbc:ID>
+          <cbc:Name>IVA</cbc:Name>
+        </cac:TaxScheme>
+      </cac:PartyTaxScheme>
+      <cac:PartyLegalEntity>
+        <cbc:RegistrationName>CAMACHO DIAZ YUDDY NATALY</cbc:RegistrationName>
+        <cbc:CompanyID
+          schemeName="13"
+          schemeAgencyID="195"
+          schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)"
+          >37535872</cbc:CompanyID
+        >
+      </cac:PartyLegalEntity>
+      <cac:Contact>
+        <cbc:Name>YUDDY NATALY CAMACHO DIAZ</cbc:Name>
+        <cbc:Telephone>3108736026</cbc:Telephone>
+        <cbc:ElectronicMail>facturasclientessiesa@gmail.com</cbc:ElectronicMail>
+      </cac:Contact>
+    </cac:Party>
+  </cac:AccountingCustomerParty>
+  <cac:PaymentMeans>
+    <cbc:ID>2</cbc:ID>
+    <cbc:PaymentMeansCode>1</cbc:PaymentMeansCode>
+    <cbc:PaymentDueDate>2026-11-12</cbc:PaymentDueDate>
+  </cac:PaymentMeans>
+  <cac:TaxTotal>
+    <cbc:TaxAmount currencyID="COP">39062.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="COP">79070.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="COP">3954.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:Percent>5.00</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>01</cbc:ID>
+          <cbc:Name>IVA</cbc:Name>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="COP">184779.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="COP">35108.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:Percent>19.00</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>01</cbc:ID>
+          <cbc:Name>IVA</cbc:Name>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:TaxTotal>
+  <cac:WithholdingTaxTotal>
+    <cbc:TaxAmount currencyID="COP">2398.00</cbc:TaxAmount>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="COP">117500.00</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="COP">705.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:Percent>0.60</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>06</cbc:ID>
+          <cbc:Name>ReteRenta</cbc:Name>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+    <cac:TaxSubtotal>
+      <cbc:TaxableAmount currencyID="COP">307818.18</cbc:TaxableAmount>
+      <cbc:TaxAmount currencyID="COP">1693.00</cbc:TaxAmount>
+      <cac:TaxCategory>
+        <cbc:Percent>0.55</cbc:Percent>
+        <cac:TaxScheme>
+          <cbc:ID>06</cbc:ID>
+          <cbc:Name>ReteRenta</cbc:Name>
+        </cac:TaxScheme>
+      </cac:TaxCategory>
+    </cac:TaxSubtotal>
+  </cac:WithholdingTaxTotal>
+  <cac:LegalMonetaryTotal>
+    <cbc:LineExtensionAmount currencyID="COP">307851.00</cbc:LineExtensionAmount>
+    <cbc:TaxExclusiveAmount currencyID="COP">263849.00</cbc:TaxExclusiveAmount>
+    <cbc:TaxInclusiveAmount currencyID="COP">346913.00</cbc:TaxInclusiveAmount>
+    <cbc:PayableAmount currencyID="COP">346913.00</cbc:PayableAmount>
+  </cac:LegalMonetaryTotal>
+  <cac:InvoiceLine>
+    <cbc:ID>1</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="NIU">22.00</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="COP">44002.00</cbc:LineExtensionAmount>
+    <cac:Item>
+      <cbc:Description>FUSION ARROZ 500GR</cbc:Description>
+      <cbc:ModelName></cbc:ModelName>
+      <cac:SellersItemIdentification>
+        <cbc:ID>MER10010</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID
+          schemeID="999"
+          schemeName="Estándar de adopción del contribuyente"
+          schemeAgencyID="195"
+          >MER10010</cbc:ID
+        >
+      </cac:StandardItemIdentification>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_cod_barras_movto</cbc:Name>
+        <cbc:Value>7708507552444</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_factor_emp</cbc:Name>
+        <cbc:Value>0.0000</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_motivo</cbc:Name>
+        <cbc:Value>01</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_um_base</cbc:Name>
+        <cbc:Value>UND</cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="COP">2000.09</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="NIU">22.00</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>2</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="NIU">6.00</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="COP">60023.00</cbc:LineExtensionAmount>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="COP">3001.00</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+        <cbc:TaxableAmount currencyID="COP">60023.00</cbc:TaxableAmount>
+        <cbc:TaxAmount currencyID="COP">3001.00</cbc:TaxAmount>
+        <cac:TaxCategory>
+          <cbc:Percent>5.00</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID>01</cbc:ID>
+            <cbc:Name>IVA</cbc:Name>
+          </cac:TaxScheme>
+        </cac:TaxCategory>
+      </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item>
+      <cbc:Description>FUSION CAFE TOSTADO Y MOLIDO 220GR</cbc:Description>
+      <cbc:ModelName></cbc:ModelName>
+      <cac:SellersItemIdentification>
+        <cbc:ID>MER10034</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID
+          schemeID="999"
+          schemeName="Estándar de adopción del contribuyente"
+          schemeAgencyID="195"
+          >MER10034</cbc:ID
+        >
+      </cac:StandardItemIdentification>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_cod_barras_movto</cbc:Name>
+        <cbc:Value>7707244566202</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_factor_emp</cbc:Name>
+        <cbc:Value>0.0000</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_motivo</cbc:Name>
+        <cbc:Value>01</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_um_base</cbc:Name>
+        <cbc:Value>UND</cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="COP">10003.83</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="NIU">6.00</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>3</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="NIU">2.00</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="COP">16859.00</cbc:LineExtensionAmount>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="COP">3203.00</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+        <cbc:TaxableAmount currencyID="COP">16859.00</cbc:TaxableAmount>
+        <cbc:TaxAmount currencyID="COP">3203.00</cbc:TaxAmount>
+        <cac:TaxCategory>
+          <cbc:Percent>19.00</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID>01</cbc:ID>
+            <cbc:Name>IVA</cbc:Name>
+          </cac:TaxScheme>
+        </cac:TaxCategory>
+      </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item>
+      <cbc:Description>FUSION ACEITE GIRASOL BOTELLA 900ML 1 .</cbc:Description>
+      <cbc:ModelName></cbc:ModelName>
+      <cac:SellersItemIdentification>
+        <cbc:ID>MER10072</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID
+          schemeID="999"
+          schemeName="Estándar de adopción del contribuyente"
+          schemeAgencyID="195"
+          >MER10072</cbc:ID
+        >
+      </cac:StandardItemIdentification>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_cod_barras_movto</cbc:Name>
+        <cbc:Value>7709997812667</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_factor_emp</cbc:Name>
+        <cbc:Value>0.0000</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_motivo</cbc:Name>
+        <cbc:Value>01</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_um_base</cbc:Name>
+        <cbc:Value>UND</cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="COP">8429.50</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="NIU">2.00</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>4</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="NIU">4.00</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="COP">19047.00</cbc:LineExtensionAmount>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="COP">953.00</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+        <cbc:TaxableAmount currencyID="COP">19047.00</cbc:TaxableAmount>
+        <cbc:TaxAmount currencyID="COP">953.00</cbc:TaxAmount>
+        <cac:TaxCategory>
+          <cbc:Percent>5.00</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID>01</cbc:ID>
+            <cbc:Name>IVA</cbc:Name>
+          </cac:TaxScheme>
+        </cac:TaxCategory>
+      </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item>
+      <cbc:Description>FUSION PASTA SPAGUETTI 500GR TRIGO DURO</cbc:Description>
+      <cbc:ModelName></cbc:ModelName>
+      <cac:SellersItemIdentification>
+        <cbc:ID>MER10077</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID
+          schemeID="999"
+          schemeName="Estándar de adopción del contribuyente"
+          schemeAgencyID="195"
+          >MER10077</cbc:ID
+        >
+      </cac:StandardItemIdentification>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_cod_barras_movto</cbc:Name>
+        <cbc:Value>7708129732545</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_factor_emp</cbc:Name>
+        <cbc:Value>0.0000</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_motivo</cbc:Name>
+        <cbc:Value>01</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_um_base</cbc:Name>
+        <cbc:Value>UND</cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="COP">4761.75</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="NIU">4.00</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>5</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="NIU">12.00</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="COP">50420.00</cbc:LineExtensionAmount>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="COP">9580.00</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+        <cbc:TaxableAmount currencyID="COP">50420.00</cbc:TaxableAmount>
+        <cbc:TaxAmount currencyID="COP">9580.00</cbc:TaxAmount>
+        <cac:TaxCategory>
+          <cbc:Percent>19.00</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID>01</cbc:ID>
+            <cbc:Name>IVA</cbc:Name>
+          </cac:TaxScheme>
+        </cac:TaxCategory>
+      </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item>
+      <cbc:Description>FUSION ATUN ACEITE DE GIRASOL LATA 140GR</cbc:Description>
+      <cbc:ModelName></cbc:ModelName>
+      <cac:SellersItemIdentification>
+        <cbc:ID>MER10079</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID
+          schemeID="999"
+          schemeName="Estándar de adopción del contribuyente"
+          schemeAgencyID="195"
+          >MER10079</cbc:ID
+        >
+      </cac:StandardItemIdentification>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_cod_barras_movto</cbc:Name>
+        <cbc:Value>7708129732620</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_factor_emp</cbc:Name>
+        <cbc:Value>0.0000</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_motivo</cbc:Name>
+        <cbc:Value>01</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_um_base</cbc:Name>
+        <cbc:Value>UND</cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="COP">4201.67</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="NIU">12.00</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>6</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="NIU">8.00</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="COP">106443.00</cbc:LineExtensionAmount>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="COP">20224.00</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+        <cbc:TaxableAmount currencyID="COP">106443.00</cbc:TaxableAmount>
+        <cbc:TaxAmount currencyID="COP">20224.00</cbc:TaxAmount>
+        <cac:TaxCategory>
+          <cbc:Percent>19.00</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID>01</cbc:ID>
+            <cbc:Name>IVA</cbc:Name>
+          </cac:TaxScheme>
+        </cac:TaxCategory>
+      </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item>
+      <cbc:Description>DETE LÍQ DEST SUAV AROMA ROSAS DP 1500M</cbc:Description>
+      <cbc:ModelName></cbc:ModelName>
+      <cac:SellersItemIdentification>
+        <cbc:ID>MER10091</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID
+          schemeID="999"
+          schemeName="Estándar de adopción del contribuyente"
+          schemeAgencyID="195"
+          >MER10091</cbc:ID
+        >
+      </cac:StandardItemIdentification>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_cod_barras_movto</cbc:Name>
+        <cbc:Value>7750015000511</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_factor_emp</cbc:Name>
+        <cbc:Value>0.0000</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_motivo</cbc:Name>
+        <cbc:Value>01</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_um_base</cbc:Name>
+        <cbc:Value>UND</cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="COP">13305.38</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="NIU">8.00</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+  <cac:InvoiceLine>
+    <cbc:ID>7</cbc:ID>
+    <cbc:InvoicedQuantity unitCode="NIU">4.00</cbc:InvoicedQuantity>
+    <cbc:LineExtensionAmount currencyID="COP">11057.00</cbc:LineExtensionAmount>
+    <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="COP">2101.00</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+        <cbc:TaxableAmount currencyID="COP">11057.00</cbc:TaxableAmount>
+        <cbc:TaxAmount currencyID="COP">2101.00</cbc:TaxAmount>
+        <cac:TaxCategory>
+          <cbc:Percent>19.00</cbc:Percent>
+          <cac:TaxScheme>
+            <cbc:ID>01</cbc:ID>
+            <cbc:Name>IVA</cbc:Name>
+          </cac:TaxScheme>
+        </cac:TaxCategory>
+      </cac:TaxSubtotal>
+    </cac:TaxTotal>
+    <cac:Item>
+      <cbc:Description>CONSERVA PESCADO FUSÍON SAL. TOMATE*155G</cbc:Description>
+      <cbc:ModelName></cbc:ModelName>
+      <cac:SellersItemIdentification>
+        <cbc:ID>MER10096</cbc:ID>
+      </cac:SellersItemIdentification>
+      <cac:StandardItemIdentification>
+        <cbc:ID
+          schemeID="999"
+          schemeName="Estándar de adopción del contribuyente"
+          schemeAgencyID="195"
+          >MER10096</cbc:ID
+        >
+      </cac:StandardItemIdentification>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_cod_barras_movto</cbc:Name>
+        <cbc:Value>7709264955646</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_factor_emp</cbc:Name>
+        <cbc:Value>0.0000</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_motivo</cbc:Name>
+        <cbc:Value>01</cbc:Value>
+      </cac:AdditionalItemProperty>
+      <cac:AdditionalItemProperty>
+        <cbc:Name>f_um_base</cbc:Name>
+        <cbc:Value>UND</cbc:Value>
+      </cac:AdditionalItemProperty>
+    </cac:Item>
+    <cac:Price>
+      <cbc:PriceAmount currencyID="COP">2764.25</cbc:PriceAmount>
+      <cbc:BaseQuantity unitCode="NIU">4.00</cbc:BaseQuantity>
+    </cac:Price>
+  </cac:InvoiceLine>
+</Invoice>

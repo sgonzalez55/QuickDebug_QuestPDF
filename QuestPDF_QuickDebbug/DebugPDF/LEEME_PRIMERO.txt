@@ -1,0 +1,167 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                    LEEME PRIMERO                              ║
+║              PDF Quick Debug - Resumen                        ║
+╚═══════════════════════════════════════════════════════════════╝
+
+🎯 PROPÓSITO:
+
+Este proyecto te permite:
+1. Debugear PDFs con datos reales
+2. Modificar el template visualmente
+3. Integrar cambios al servicio fácilmente
+
+═══════════════════════════════════════════════════════════════
+
+⚡ INICIO RÁPIDO (3 pasos):
+
+1. INSTALAR EXTENSIÓN C# (OBLIGATORIO para breakpoints):
+
+   - Abre VS Code
+   - Ctrl+Shift+X → Busca "C# Dev Kit"
+   - Install → Reinicia VS Code
+
+   Ver: INSTALAR_EXTENSION.md
+
+2. EJECUTAR Y DEBUGEAR:
+
+   - Abre: PdfQuickDebug/Program.cs
+   - Edita líneas 16-18 (tus rutas de XML/XSLT)
+   - Click en línea 74 (aparece punto rojo 🔴)
+   - Presiona F5
+   - Inspecciona variables
+
+3. MODIFICAR TEMPLATE:
+
+   - Edita: PdfQuickDebug/Templates/FacturaUbl.cs
+   - Cambia algo (ej: Height(48) → Height(80))
+   - Ejecuta: dotnet run
+   - Ve cambios en PDF
+
+═══════════════════════════════════════════════════════════════
+
+🔧 PARA SOPORTE: INTEGRAR CAMBIOS AL SERVICIO
+
+Después de modificar el template en PdfQuickDebug:
+
+MÉTODO 1 - SCRIPT AUTOMÁTICO (Recomendado):
+
+   .\INTEGRAR_TEMPLATE.ps1
+
+   Esto hace TODO:
+   - Copia template
+   - Ajusta namespaces
+   - Compila servicio
+
+MÉTODO 2 - MANUAL:
+
+   1. Copia archivo:
+      FROM: PdfQuickDebug\Templates\FacturaUbl.cs
+      TO: code\src\Services.PdfGenerator\Infrastructure\Templates\_1193122070\FacturaUbl.cs
+
+   2. Cambia namespace (línea 10):
+      namespace Services.PdfGenerator.Infrastructure.Templates._1193122070;
+
+   3. Cambia using (línea 6):
+      using Services.PdfGenerator.Domain.Models;
+
+   4. Compila:
+      dotnet build
+
+Ver: PARA_SOPORTE_INTEGRAR.md
+
+═══════════════════════════════════════════════════════════════
+
+📁 ARCHIVOS IMPORTANTES:
+
+PdfQuickDebug/
+├── Program.cs                      ← Edita líneas 16-18 (rutas)
+├── Templates/FacturaUbl.cs         ← Modifica aquí el diseño
+│
+├── INSTALAR_EXTENSION.md           ← Cómo instalar C# Dev Kit
+├── COMO_DEBUGEAR.md                ← Guía completa debugging
+├── INICIO_RAPIDO.txt               ← Guía paso a paso
+│
+INTEGRAR_TEMPLATE.ps1               ← Script para integrar al servicio
+PARA_SOPORTE_INTEGRAR.md            ← Guía de integración
+
+═══════════════════════════════════════════════════════════════
+
+🐛 PROBLEMA: "No para en breakpoints"
+
+SOLUCIÓN:
+1. Instala C# Dev Kit (ver INSTALAR_EXTENSION.md)
+2. Reinicia VS Code
+3. Presiona F5 (no el botón Run ▶️)
+
+Si sigue sin funcionar:
+- Usa terminal: dotnet run
+- Usa Console.WriteLine para ver datos
+
+═══════════════════════════════════════════════════════════════
+
+📋 WORKFLOW COMPLETO:
+
+1. DESARROLLADOR/DISEÑADOR:
+
+   a) Abre PdfQuickDebug en VS Code
+   b) Modifica Templates/FacturaUbl.cs
+   c) Prueba: dotnet run
+   d) Debugea con F5 y breakpoints
+   e) Itera hasta obtener resultado deseado
+
+2. SOPORTE (INTEGRAR):
+
+   a) Ejecuta: .\INTEGRAR_TEMPLATE.ps1
+   b) Verifica compilación exitosa
+   c) Commit:
+      git add code/src/Services.PdfGenerator/Infrastructure/Templates/_1193122070/FacturaUbl.cs
+      git commit -m "Update template"
+      git push
+
+═══════════════════════════════════════════════════════════════
+
+💡 CAMBIOS VISUALES COMUNES:
+
+Logo más grande:
+   BUSCAR: Height(48)
+   CAMBIAR: Height(80)
+
+Título más grande:
+   BUSCAR: FontSize(9.5f)
+   CAMBIAR: FontSize(12f)
+
+Cambiar color:
+   BUSCAR: BrandColors.TextBlack
+   CAMBIAR: "#FF0000"
+
+═══════════════════════════════════════════════════════════════
+
+🆘 AYUDA RÁPIDA:
+
+¿Cómo debugear?          → COMO_DEBUGEAR.md
+¿Cómo instalar extensión? → INSTALAR_EXTENSION.md
+¿Cómo integrar al servicio? → PARA_SOPORTE_INTEGRAR.md
+¿Inicio rápido?          → INICIO_RAPIDO.txt
+¿Documentación completa? → README.md
+
+═══════════════════════════════════════════════════════════════
+
+✅ CHECKLIST PRIMERA VEZ:
+
+□ Instalar C# Dev Kit en VS Code
+□ Reiniciar VS Code
+□ Editar rutas en Program.cs líneas 16-18
+□ Ejecutar: dotnet run
+□ Verificar PDF generado
+□ Poner breakpoint en línea 74
+□ Presionar F5
+□ Ver que se detiene en breakpoint
+□ Modificar algo en Templates/FacturaUbl.cs
+□ Ejecutar: .\INTEGRAR_TEMPLATE.ps1
+□ Hacer commit y push
+
+═══════════════════════════════════════════════════════════════
+
+🎉 ¡TODO LISTO PARA USAR!
+
+Cualquier duda, revisa los archivos de documentación mencionados.

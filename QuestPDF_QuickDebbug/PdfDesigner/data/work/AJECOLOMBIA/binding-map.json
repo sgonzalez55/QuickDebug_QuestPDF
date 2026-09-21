@@ -1,0 +1,139 @@
+{
+  "version": "1.0",
+  "customFieldPattern": "^f_",
+  "customFieldTemplate": "GetCustomField(model, \"{name}\")",
+  "mappings": [
+    {
+      "match": "//CFD/Documento/@numero_cd",
+      "expr": "model.Document.Number"
+    },
+    {
+      "match": "//CFD/Documento/@firma_digital",
+      "expr": "model.Document.CUFE"
+    },
+    {
+      "match": "//CFD/Documento/@fecha_emision_fe",
+      "expr": "model.Document.IssueDate"
+    },
+    {
+      "match": "//CFD/Documento/@fecha_vencimiento_fe",
+      "expr": "model.Document.DueDate"
+    },
+    {
+      "match": "//CFD/Documento/@comentario_ds",
+      "expr": "model.Additional.Notes"
+    },
+    {
+      "match": "//CFD/Emisor/@nombre_comercial_temp",
+      "expr": "model.Issuer.Name"
+    },
+    {
+      "match": "//CFD/Emisor/@nit_cd",
+      "expr": "model.Issuer.TaxId"
+    },
+    {
+      "match": "//CFD/Emisor/@direccion_temp",
+      "expr": "model.Issuer.Address"
+    },
+    {
+      "match": "//CFD/Receptor/@ciudad_tx",
+      "expr": "model.Issuer.City"
+    },
+    {
+      "match": "//CFD/Emisor/@telefono_temp",
+      "expr": "model.Issuer.Phone"
+    },
+    {
+      "match": "//CFD/Emisor/@email_temp",
+      "expr": "model.Issuer.Email"
+    },
+    {
+      "match": "//CFD/Receptor/@nombre_comercial_ds",
+      "expr": "model.Customer.Name"
+    },
+    {
+      "match": "//CFD/Receptor/@nit_cd",
+      "expr": "model.Customer.TaxId"
+    },
+    {
+      "match": "//CFD/Receptor/@direccion_tx",
+      "expr": "model.Customer.Address"
+    },
+    {
+      "match": "//CFD/Receptor/@ciudad_tx",
+      "expr": "model.Customer.City"
+    },
+    {
+      "match": "//CFD/Receptor/@TelefonoReceptor",
+      "expr": "model.Customer.Phone"
+    },
+    {
+      "match": "//CFD/Receptor/@email_recepcion_ds",
+      "expr": "model.Customer.Email"
+    },
+    {
+      "match": "//CFD/Documento/@total_am",
+      "expr": "model.Totals.Total"
+    },
+    {
+      "match": "//CFD/Documento/@subtotal_am",
+      "expr": "model.Totals.Subtotal"
+    },
+    {
+      "match": "//CFD/Documento/@impuestos_am",
+      "expr": "model.Totals.TotalTax"
+    },
+    {
+      "match": "//CFD/Documento/@descuentos_am",
+      "expr": "model.Totals.TotalDiscount"
+    },
+    {
+      "match": "@descripcion_tx",
+      "expr": "line.Description"
+    },
+    {
+      "match": "@cantidad_nu",
+      "expr": "line.Quantity"
+    },
+    {
+      "match": "@precio_unitario_am",
+      "expr": "line.UnitPrice"
+    },
+    {
+      "match": "@total_linea_am",
+      "expr": "line.LineTotal"
+    },
+    {
+      "match": "@impuesto_tasa_nu",
+      "expr": "line.TaxRate"
+    },
+    {
+      "match": "@item_imp_am",
+      "expr": "line.TaxValor"
+    },
+    {
+      "match": "@unidad_medida_cd",
+      "expr": "line.Unit"
+    },
+    {
+      "match": "@codigo_cd",
+      "expr": "line.Codigo_cd"
+    },
+    {
+      "match": "@descuento_am",
+      "expr": "line.Discount"
+    },
+    {
+      "match": "@vlr_descuento",
+      "expr": "line.ValorDescuento"
+    },
+    {
+      "match": "@item_subtotal_am",
+      "expr": "line.PrecioAntesIVA"
+    },
+    {
+      "match": "@ibua",
+      "expr": "line.Ibua"
+    }
+  ]
+}

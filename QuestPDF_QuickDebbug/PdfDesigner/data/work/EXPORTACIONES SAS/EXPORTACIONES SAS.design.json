@@ -1,0 +1,388 @@
+{
+  "version": "2.0",
+  "page": {
+    "size": "Letter",
+    "orientation": "Portrait",
+    "width": 0,
+    "height": 0,
+    "margins": {
+      "top": 20,
+      "right": 20,
+      "bottom": 20,
+      "left": 20
+    },
+    "unit": "pt",
+    "fontFamily": "Liberation Sans",
+    "defaultFontSize": 10
+  },
+  "metadata": {
+    "nit": "900111222",
+    "templateName": "EXPORTACIONES SAS",
+    "clientName": "Designer",
+    "version": "1.0"
+  },
+  "namespaces": {},
+  "sections": [
+    {
+      "id": "f93f330d",
+      "kind": "reportHeader",
+      "height": 8,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "d8e11b39",
+      "kind": "pageHeader",
+      "height": 70,
+      "canGrow": false,
+      "visible": true,
+      "elements": [
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.Issuer.Name",
+            "default": "SIESA DE PRUEBAS S.A.S."
+          },
+          "format": "text",
+          "x": 240,
+          "y": 0,
+          "width": 160,
+          "height": 18,
+          "zIndex": 0,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "align": "center",
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.Issuer.Email",
+            "default": "facturacion@siesapruebas.test"
+          },
+          "format": "text",
+          "x": 240,
+          "y": 10,
+          "width": 160,
+          "height": 18,
+          "zIndex": 1,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "align": "center",
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.Issuer.City",
+            "default": "Valle del Cauca"
+          },
+          "format": "text",
+          "x": 240,
+          "y": 20,
+          "width": 160,
+          "height": 18,
+          "zIndex": 2,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "align": "center",
+            "color": "#000000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6f1195be",
+      "kind": "groupHeader",
+      "height": 70,
+      "canGrow": false,
+      "visible": true,
+      "elements": [
+        {
+          "type": "shape",
+          "shape": "rectangle",
+          "cornerRadius": 6,
+          "x": 0,
+          "y": 0,
+          "width": 570,
+          "height": 60,
+          "zIndex": -1,
+          "visible": true,
+          "style": {
+            "background": "#FFFFFF",
+            "borderColor": "#000000",
+            "borderWidth": 0.5
+          }
+        },
+        {
+          "type": "text",
+          "text": "NOMBRE CONTACTO",
+          "x": 0,
+          "y": 0,
+          "width": 120,
+          "height": 18,
+          "zIndex": 0,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "text",
+          "text": "TELEFONO CONTACTO",
+          "x": 0,
+          "y": 20,
+          "width": 120,
+          "height": 20,
+          "zIndex": 1,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "text",
+          "text": "DIRECCION CONTACTO",
+          "x": 0,
+          "y": 40,
+          "width": 120,
+          "height": 18,
+          "zIndex": 2,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.Customer.Name",
+            "default": "CLIENTE DE PRUEBAS LTDA"
+          },
+          "format": "text",
+          "x": 100,
+          "y": 0,
+          "width": 160,
+          "height": 18,
+          "zIndex": 3,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.Customer.Address",
+            "default": "Carrera 43A # 34-95"
+          },
+          "format": "text",
+          "x": 110,
+          "y": 40,
+          "width": 160,
+          "height": 18,
+          "zIndex": 4,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.InformacionAdditional.Telefono_Receptor",
+            "default": "\u002B57 604 3331234"
+          },
+          "format": "text",
+          "x": 110,
+          "y": 20,
+          "width": 160,
+          "height": 18,
+          "zIndex": 5,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "line",
+          "thickness": 1,
+          "direction": "vertical",
+          "x": 280,
+          "y": 0,
+          "width": 40,
+          "height": 60,
+          "zIndex": 6,
+          "visible": true,
+          "style": {
+            "color": "#000000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "df111bb9",
+      "kind": "custom",
+      "height": 20,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "bfc59334",
+      "kind": "detail",
+      "height": 20,
+      "canGrow": false,
+      "visible": true,
+      "repeat": {
+        "xpath": "//Detalle",
+        "alias": ""
+      },
+      "elements": [
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "@linea_nu",
+            "expr": "line.LineNumber",
+            "default": "1"
+          },
+          "format": "text",
+          "x": -0,
+          "y": 0,
+          "width": 30,
+          "height": 20,
+          "zIndex": 0,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "align": "center",
+            "verticalAlign": "middle",
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "@descripcion_tx",
+            "expr": "line.Description",
+            "default": "Licencia de software m\u00F3dulo facturaci\u00F3n - anual"
+          },
+          "format": "text",
+          "x": 30,
+          "y": 0,
+          "width": 240,
+          "height": 20,
+          "zIndex": 1,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "@cantidad_nu",
+            "expr": "line.Quantity",
+            "default": "2.00"
+          },
+          "format": "text",
+          "x": 280,
+          "y": -0,
+          "width": 20,
+          "height": 20,
+          "zIndex": 2,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "align": "center",
+            "verticalAlign": "middle",
+            "color": "#000000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "385ec327",
+      "kind": "groupFooter",
+      "height": 50,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "c92481ba",
+      "kind": "pageFooter",
+      "height": 80,
+      "canGrow": false,
+      "visible": true,
+      "elements": [
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.Additional.Notes",
+            "default": "Prueba de generaci\u00C3\u00B3n XML - factura de prueba con m\u00C3\u00BAltiples\u2026"
+          },
+          "format": "text",
+          "x": 0,
+          "y": -50,
+          "width": 420,
+          "height": 20,
+          "zIndex": 0,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "//Adicional/Campo[@clave=\u0027ResolucionTexto\u0027]/@valor",
+            "expr": "GetCustomField(model, \u0022ResolucionTexto\u0022)",
+            "default": "AGENTE RETENEDOR DE IVA -  SOMOS AUTORRETENEDORES  DE RENTA SEGUN RESOLUCI\u00D3N No 13834 del 20 de Noviembre de 2007 - GRAN CONTRIBUYENTE RESOLUCI\u00D3N No  000200 del 27 de Diciembre de 2024 Autorizaci\u00F3n Numeraci\u00F3n de Facturaci\u00F3n No. 18764096091725 Numeraci\u00F3n: AUTORIZADA Rango desde: PFUA1 hasta: PFUA5000000 Vigencia desde: 25/07/2025 hasta: 25/07/2027 - 24 Meses"
+          },
+          "format": "text",
+          "x": -0,
+          "y": 20,
+          "width": 570,
+          "height": 30,
+          "zIndex": 1,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6e0f2d0b",
+      "kind": "reportFooter",
+      "height": 60,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    }
+  ],
+  "expressions": {}
+}

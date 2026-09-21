@@ -1,0 +1,177 @@
+{
+  "version": "2.0",
+  "page": {
+    "size": "Letter",
+    "orientation": "Portrait",
+    "width": 0,
+    "height": 0,
+    "margins": {
+      "top": 30,
+      "right": 30,
+      "bottom": 30,
+      "left": 30
+    },
+    "unit": "pt",
+    "fontFamily": "Liberation Sans",
+    "defaultFontSize": 10
+  },
+  "metadata": {
+    "nit": "800153993",
+    "templateName": "FacturaDesigner",
+    "clientName": "AJECOLOMBIA",
+    "version": "1.0"
+  },
+  "namespaces": {
+    "inv": "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2",
+    "cbc": "urn:demo:common",
+    "dif": "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2",
+    "fe": "urn:oasis:names:specification:ubl:schema:xsd:Invoice-2",
+    "clm54217": "urn:un:unece:uncefact:codelist:specification:54217:2001",
+    "clm66411": "urn:un:unece:uncefact:codelist:specification:66411:2001",
+    "clmIANAMIMEMediaType": "urn:un:unece:uncefact:codelist:specification:IANAMIMEMediaType:2003",
+    "qdt": "urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2",
+    "sac": "urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1",
+    "udt": "urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2",
+    "xsi": "http://www.w3.org/2001/XMLSchema-instance"
+  },
+  "sections": [
+    {
+      "id": "617075fa",
+      "kind": "reportHeader",
+      "height": 8,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "7a248bd1",
+      "kind": "pageHeader",
+      "height": 150,
+      "canGrow": false,
+      "visible": true,
+      "elements": [
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "//CFD/Receptor/@ciudad_tx",
+            "expr": "model.Customer.City",
+            "default": ""
+          },
+          "format": "text",
+          "x": 50,
+          "y": 60,
+          "width": 50,
+          "height": 20,
+          "zIndex": 0,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "//CFD/Receptor/@email_recepcion_ds",
+            "expr": "model.Customer.Email",
+            "default": ""
+          },
+          "format": "text",
+          "x": 110,
+          "y": 60,
+          "width": 160,
+          "height": 18,
+          "zIndex": 1,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "//CFD/Emisor/@nombre_comercial_temp",
+            "expr": "model.Issuer.Name",
+            "default": ""
+          },
+          "format": "text",
+          "x": 190,
+          "y": 20,
+          "width": 160,
+          "height": 18,
+          "zIndex": 2,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "//CFD/Emisor/@telefono_temp",
+            "expr": "model.Issuer.Phone",
+            "default": ""
+          },
+          "format": "text",
+          "x": 190,
+          "y": 30,
+          "width": 160,
+          "height": 18,
+          "zIndex": 3,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c62baa1a",
+      "kind": "groupHeader",
+      "height": 30,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "d52c4dc8",
+      "kind": "detail",
+      "height": 10,
+      "canGrow": false,
+      "visible": true,
+      "repeat": {
+        "xpath": "",
+        "alias": ""
+      },
+      "elements": []
+    },
+    {
+      "id": "c55f5925",
+      "kind": "groupFooter",
+      "height": 24,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "ddd57ff3",
+      "kind": "pageFooter",
+      "height": 30,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "df2741d4",
+      "kind": "reportFooter",
+      "height": 64,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    }
+  ],
+  "expressions": {}
+}

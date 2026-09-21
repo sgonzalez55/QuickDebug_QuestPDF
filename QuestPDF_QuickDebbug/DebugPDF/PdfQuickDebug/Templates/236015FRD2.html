@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>upload_n6tulji4ux7zpwkkeggabbft5m.pdf</title>
+<style>
+/* pdf2html base stylesheet — fixed-layout, faithful page reproduction. */
+html, body { margin: 0; padding: 0; }
+body { background: #e8e8e8; }
+
+/* One page = a positioning context sized to the PDF page box (CSS px). isolation:isolate makes it a
+   stacking context so each page's per-element paint-order z-indexes stay self-contained (and the fixed
+   sidebars keep sitting above every page's content, form fields included). */
+.page {
+	position: relative;
+	isolation: isolate;
+	margin: 8px auto;
+	background: #fff;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+	overflow: hidden;
+}
+
+/* The text-suppressed background raster (vectors + images), behind the text. */
+.bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
+	user-select: none;
+	-webkit-user-select: none;
+	pointer-events: none;
+}
+
+/* Type3-only transparent overlay (Type3Mode.IMAGE): Type3 glyph shapes above the background, below text. */
+.t3o {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
+	user-select: none;
+	-webkit-user-select: none;
+	pointer-events: none;
+	image-orientation: none;
+}
+
+/* A positioned text run. transform + font-size carry position/rotation/scale; the pooled style class
+   carries font-family/size/color. Runs are emitted in logical reading order (tagged PDFs) but carry an
+   inline z-index equal to their paint sequence, so visual stacking is unaffected by the DOM order. */
+.t {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	white-space: pre;
+	line-height: 1;
+	transform-origin: 0 0;
+	display: inline-block;
+}
+
+/* An extracted image. Each element carries an inline z-index equal to its paint sequence (this class value
+   is only a fallback), so images stack correctly over/under text and vectors no matter the DOM order. */
+.im {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	transform-origin: 0 0;
+	display: block;
+	/* PDF placement ignores EXIF Orientation; browsers honour it by default. Pass-through JPEGs may carry
+	   an Orientation tag, so pin it off to match the PDF (no-op for re-encoded images, which have no EXIF). */
+	image-orientation: none;
+}
+
+/* An extracted vector layer (SVG). Carries an inline z-index equal to its group's paint sequence (this
+   class value is only a fallback), so it layers correctly against text and images regardless of DOM order. */
+.vec {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	overflow: visible;
+	pointer-events: none;
+}
+
+/* Zero-size internal-link target anchor at a destination's exact Y; scroll lands here, not the page top. */
+.dst {
+	position: absolute;
+	left: 0;
+	width: 0;
+	height: 0;
+	scroll-margin-top: 8px;
+}
+
+/* Zero-size holder for <clipPath> defs referenced by clipped vector paths; takes no layout space. */
+.cdefs {
+	position: absolute;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+/* A detected ruled table (opt-in): a real, copyable/accessible <table> sized to the grid, laid over the
+   visual layer. Cells are transparent and border-less so the ruling lines and fills underneath show. */
+.tbl {
+	position: absolute;
+	z-index: 1000000000; /* above the paint-order content band (runs/images/vectors carry z-index = paint seq) */
+	border-collapse: collapse;
+	table-layout: fixed;
+	margin: 0;
+	color: #000;
+	line-height: 1.1;
+}
+.tbl td {
+	border: 0;
+	padding: 1px 2px;
+	overflow: hidden;
+	vertical-align: middle;
+	text-align: left;
+	white-space: normal;
+	word-break: break-word;
+}
+
+/* Interactive link boxes and form controls, above the text/image/table layer (which uses a paint-order
+   z-index band). Kept below the fixed sidebars (z-index:10 in the root context; each .page isolates its
+   own high z-indexes). */
+.lnk {
+	position: absolute;
+	z-index: 2000000000;
+	display: block;
+}
+
+.fld {
+	position: absolute;
+	z-index: 2000000000;
+	box-sizing: border-box;
+	font-size: 12px;
+	margin: 0;
+}
+
+/* Collapsible navigation sidebars (opt-in): outline (bookmarks) on the left, thumbnails on the right.
+   Both are fixed, scroll independently, sit above the pages and are hidden when printing. */
+.toc, .thumbs {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	z-index: 10;
+	background: rgba(250, 250, 250, .97);
+	box-shadow: 0 0 6px rgba(0, 0, 0, .25);
+	overflow: auto;
+	font-family: sans-serif;
+	font-size: 13px;
+	-webkit-user-select: none;
+	user-select: none;
+}
+.toc {
+	left: 0;
+	width: 250px;
+}
+.thumbs {
+	right: 0;
+	width: 172px;
+}
+.toc summary, .thumbs summary {
+	cursor: pointer;
+	padding: 8px 10px;
+	font-weight: bold;
+	position: sticky;
+	top: 0;
+	background: inherit;
+	border-bottom: 1px solid #ddd;
+}
+.toc ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 12px;
+}
+.toc li {
+	margin: 1px 0;
+}
+.toc a, .toc span {
+	display: block;
+	padding: 2px 6px;
+	text-decoration: none;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.toc a {
+	color: #06c;
+}
+.toc a:hover {
+	text-decoration: underline;
+	background: #eef4ff;
+}
+.toc span {
+	color: #333;
+}
+.thumbs ol {
+	list-style: none;
+	margin: 0;
+	padding: 8px;
+}
+.thumbs li {
+	margin: 0 0 10px;
+	text-align: center;
+}
+.thumbs a {
+	text-decoration: none;
+	color: #666;
+	font-size: 11px;
+}
+.thumbs img {
+	display: block;
+	width: 140px;
+	height: auto;
+	margin: 0 auto 2px;
+	border: 1px solid #bbb;
+	background: #fff;
+}
+.thumbs a:hover img {
+	border-color: #06c;
+	box-shadow: 0 0 0 2px #cfe0ff;
+}
+
+/* Print / PDF round-trip: one source page per printed page, no chrome margins or shadow.
+   The exact paper size is pinned by a generated @page rule when all pages share one size. */
+@media print {
+	body { background: #fff; }
+	.toc, .thumbs { display: none; }
+	.page { margin: 0; box-shadow: none; break-after: page; }
+	.page:last-child { break-after: auto; }
+}
+.c0{font-family:Arial, Helvetica, sans-serif;font-size:11px;font-weight:700;color:#000000}
+.c1{font-family:Arial, Helvetica, sans-serif;font-size:10.67px;color:#000000}
+.c2{font-family:Arial, Helvetica, sans-serif;font-size:9.33px;color:#000000}
+.c3{font-family:Arial, Helvetica, sans-serif;font-size:9.33px;font-weight:700;color:#000000}
+.c4{font-family:Arial, Helvetica, sans-serif;font-size:16px;color:#000000}
+.c5{font-family:Arial, Helvetica, sans-serif;font-size:15px;font-weight:700;color:#000000}
+.c6{font-family:Arial, Helvetica, sans-serif;font-size:10.67px;font-weight:700;color:#000000}
+.c7{font-family:Arial, Helvetica, sans-serif;font-size:8px;color:#000000}
+@page{size:818.67px 1056px;margin:0}
+</style>
+</head>
+<body>
+<style>
+#p0{width:818.67px;height:1056px}
+</style>
+<div class="page" id="p0">
+<svg class="cdefs" width="0" height="0"><defs><clipPath id="c0_0"><path d="M21.1 1034.9V549.9H797.2V1034.9Z"/></clipPath><clipPath id="c0_1"><path d="M29 602.9V549.9H407.4V602.9Z"/></clipPath></defs></svg>
+<svg class="vec" style="z-index:211;left:28.39px;top:39.49px;overflow:hidden" width="760.64" height="360.57" viewBox="28.39 39.49 760.64 360.57"><path d="M30.2 398.7H787.7" fill="none" stroke="#000000" stroke-width="0.67"/><path d="M29.7 340H787.4V209.5H29.7ZZ" fill="none" stroke="#000000" stroke-width="0.67"/><path d="M620.5 138.9H787.4V40.8H620.5ZZ" fill="none" stroke="#000000" stroke-width="0.67"/></svg>
+<svg class="vec" style="z-index:482;left:621.63px;top:207.88px;overflow:hidden" width="3.33" height="43.17" viewBox="621.63 207.88 3.33 43.17"><path d="M623 209.2L623.6 249.7" fill="none" stroke="#000000" stroke-width="0.67"/></svg>
+<svg class="vec" style="z-index:498;left:405.43px;top:247.43px;overflow:hidden" width="383.6" height="3.63" viewBox="405.43 247.43 383.6 3.63"><path d="M406.8 249.7L787.7 248.8" fill="none" stroke="#000000" stroke-width="0.67"/></svg>
+<svg class="vec" style="z-index:520;left:405.45px;top:296.77px;overflow:hidden" width="380.79" height="3.85" viewBox="405.45 296.77 380.79 3.85"><path d="M406.8 299.3L784.9 298.1" fill="none" stroke="#000000" stroke-width="0.67"/></svg>
+<svg class="vec" style="z-index:527;left:471.77px;top:297.97px;overflow:hidden" width="3.04" height="43.52" viewBox="471.77 297.97 3.04 43.52"><path d="M473.1 340.2L473.5 299.3" fill="none" stroke="#000000" stroke-width="0.67"/></svg>
+<svg class="vec" style="z-index:549;left:563.35px;top:297.97px;overflow:hidden" width="93.59" height="43.71" viewBox="563.35 297.97 93.59 43.71"><path d="M564.7 340.2V299.3" fill="none" stroke="#000000" stroke-width="0.67"/><path d="M655.2 340.3L655.6 299.3" fill="none" stroke="#000000" stroke-width="0.67"/></svg>
+<img class="im" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAkACQAAD/4QBaRXhpZgAATU0AKgAAAAgABQMBAAUAAAABAAAASgMDAAEAAAABAAAAAFEQAAEAAAABAQAAAFERAAQAAAABAAAWJVESAAQAAAABAAAWJQAAAAAAAYagAACxj//bAEMADQkKCwoIDQsLCw8ODRAUIRUUEhIUKB0eGCEwKjIxLyouLTQ7S0A0OEc5LS5CWUJHTlBUVVQzP11jXFJiS1NUUf/bAEMBDg8PFBEUJxUVJ1E2LjZRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUVFRUf/AABEIAGgAaAMBIgACEQEDEQH/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAAAAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/APMKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP//Z" style="z-index:574;width:69.33px;height:69.33px;transform:matrix(1,0,0,1,536.27,44.24)" alt="">
+<svg class="vec" style="z-index:616;left:618.84px;top:70.79px;overflow:hidden" width="170.19" height="2.67" viewBox="618.84 70.79 170.19 2.67"><path d="M620.2 72.1H787.7" fill="none" stroke="#000000" stroke-width="0.67"/></svg>
+<svg class="vec" style="z-index:870;left:717.53px;top:297.97px;overflow:hidden" width="2.67" height="43.52" viewBox="717.53 297.97 2.67 43.52"><path d="M718.9 340.2V299.3" fill="none" stroke="#000000" stroke-width="0.67"/></svg>
+<svg class="vec" style="z-index:927;left:405.43px;top:207.88px;overflow:hidden" width="2.67" height="133.61" viewBox="405.43 207.88 2.67 133.61"><path d="M406.8 209.2V340.2" fill="none" stroke="#000000" stroke-width="0.67"/></svg>
+<svg class="vec" style="z-index:1144;left:29.16px;top:677.06px;overflow:hidden" width="759.54" height="337.14" viewBox="29.16 677.06 759.54 337.14"><path d="M30.5 1012.9H787.4V678.4H30.5ZZ" fill="none" stroke="#000000" stroke-width="0.67"/></svg>
+<svg class="vec" style="z-index:1176;left:47.83px;top:942.45px;overflow:hidden" width="186.8" height="2.67" viewBox="47.83 942.45 186.8 2.67"><path d="M49.2 943.8H233.3" fill="none" stroke="#000000" stroke-width="0.67"/></svg>
+<svg class="vec" style="z-index:1222;left:311.93px;top:942.45px;overflow:hidden" width="197.55" height="2.67" viewBox="311.93 942.45 197.55 2.67"><path d="M313.3 943.8H508.1" fill="none" stroke="#000000" stroke-width="0.67"/></svg>
+<svg class="vec" style="z-index:1895;left:30.41px;top:623.84px;overflow:hidden" width="758.29" height="321.28" viewBox="30.41 623.84 758.29 321.28"><path d="M565.4 943.8H760.2" fill="none" stroke="#000000" stroke-width="0.67"/><g clip-path="url(#c0_0)"><path d="M31.7 668.5H787.4V625.2H31.7ZZ" fill="none" stroke="#000000" stroke-width="0.67"/></g></svg>
+<svg class="vec" style="z-index:2140;left:28.01px;top:340.73px;overflow:hidden" width="760.69" height="263.13" viewBox="28.01 340.73 760.69 263.13"><g clip-path="url(#c0_1)"><path d="M29.3 588.7H406.7V550.2H29.3ZZ" fill="none" stroke="#ffffff" stroke-width="0.67"/></g><path d="M29.3 602.5H787.4V342.1H29.3ZZ" fill="none" stroke="#000000" stroke-width="0.67"/></svg>
+<div class="t c0" style="z-index:1;transform:matrix(1,0,0,1,753.75,343.4)">IVA%</div>
+<div class="t c0" style="z-index:5;transform:matrix(1,0,0,1,677.73,343.4)">Valor Total</div>
+<div class="t c0" style="z-index:16;transform:matrix(1,0,0,1,262.15,343.4)">Descripcion</div>
+<div class="t c0" style="z-index:27;transform:matrix(1,0,0,1,591.53,343.4)">Descuento</div>
+<div class="t c0" style="z-index:36;transform:matrix(1,0,0,1,469.64,343.4)">Kilos</div>
+<div class="t c0" style="z-index:41;transform:matrix(1,0,0,1,415.82,343.4)">Bultos</div>
+<div class="t c0" style="z-index:47;transform:matrix(1,0,0,1,515.51,343.4)">Precio Uni.</div>
+<div class="t c0" style="z-index:58;transform:matrix(1,0,0,1,37.96,343.4)">Nro Items</div>
+<div class="t c0" style="z-index:67;transform:matrix(1,0,0,1,125.55,343.4)">Item</div>
+<div class="t c1" style="z-index:71;transform:matrix(1,0,0,1,100.42,359.3)">520115</div>
+<div class="t c1" style="z-index:77;transform:matrix(1,0,0,1,182.4,359.3)">NUTRISS CACHORROS LECHE X 15KG</div>
+<div class="t c2" style="z-index:107;transform:matrix(1,0,0,1,753.29,359.3)">5.00 %</div>
+<div class="t c1" style="z-index:113;transform:matrix(1,0,0,1,59.16,359.3)">1</div>
+<div class="t c1" style="z-index:114;transform:matrix(1,0,0,1,423.97,359.3)">40</div>
+<div class="t c1" style="z-index:116;transform:matrix(1,0,0,1,474.18,359.3)">600.00</div>
+<div class="t c1" style="z-index:122;transform:matrix(1,0,0,1,663.46,359.3)">$3,729,880</div>
+<div class="t c1" style="z-index:132;transform:matrix(1,0,0,1,545.05,359.3)">$93,247</div>
+<div class="t c1" style="z-index:139;transform:matrix(1,0,0,1,100.42,379.68)">526583</div>
+<div class="t c1" style="z-index:145;transform:matrix(1,0,0,1,182.4,379.68)">VIVANCE VITALITY PERRO ADULT 0.25K</div>
+<div class="t c2" style="z-index:179;transform:matrix(1,0,0,1,753.29,379.68)">5.00 %</div>
+<div class="t c1" style="z-index:185;transform:matrix(1,0,0,1,59.16,379.68)">2</div>
+<div class="t c1" style="z-index:186;transform:matrix(1,0,0,1,423.97,379.68)">45</div>
+<div class="t c1" style="z-index:188;transform:matrix(1,0,0,1,474.18,379.68)">225.00</div>
+<div class="t c1" style="z-index:194;transform:matrix(1,0,0,1,663.46,379.68)">$1,601,775</div>
+<div class="t c1" style="z-index:204;transform:matrix(1,0,0,1,545.05,379.68)">$35,595</div>
+<div class="t c3" style="z-index:214;transform:matrix(1,0,0,1,411.75,213.91)">Forma de Pago:</div>
+<div class="t c3" style="z-index:228;transform:matrix(1,0,0,1,32.64,300.64)">Teléfono:</div>
+<div class="t c3" style="z-index:237;transform:matrix(1,0,0,1,32.64,252.98)">Nit o C.C:</div>
+<div class="t c3" style="z-index:247;transform:matrix(1,0,0,1,32.64,215.54)">Cliente:</div>
+<div class="t c3" style="z-index:255;transform:matrix(1,0,0,1,31.68,274.96)">Dirección:</div>
+<div class="t c4" style="z-index:265;transform:matrix(1,0,0,1,273.65,86.13)">NIT: 901633554-3</div>
+<div class="t c2" style="z-index:281;transform:matrix(1,0,0,1,30.34,131.15)">CR 48 27 A SUR 89 Tel:  Fax:  Ciudad: 266</div>
+<div class="t c5" style="z-index:322;transform:matrix(1,0,0,1,282.76,41.88)">MIZOOCO S.A.S.</div>
+<div class="t c1" style="z-index:336;transform:matrix(1,0,0,1,627.27,84.59)">Número:</div>
+<div class="t c1" style="z-index:343;transform:matrix(1,0,0,1,627.27,101.15)">Fecha:</div>
+<div class="t c1" style="z-index:349;transform:matrix(1,0,0,1,627.27,117.97)">Página:</div>
+<div class="t c1" style="z-index:356;transform:matrix(1,0,0,1,681.6,84.59)">FRD2</div>
+<div class="t c1" style="z-index:360;transform:matrix(1,0,0,1,681.6,101.15)">8/09/2026</div>
+<div class="t c2" style="z-index:369;transform:matrix(1,0,0,1,112.42,251.78)">890901271</div>
+<div class="t c2" style="z-index:378;transform:matrix(1,0,0,1,111.46,273.76)">CR 48 27 A SUR 89</div>
+<div class="t c2" style="z-index:395;transform:matrix(1,0,0,1,112.42,299.44)">4035030</div>
+<div class="t c2" style="z-index:402;transform:matrix(1,0,0,1,112.42,214.39)">PRODUCTORA DE ALIMENTOS CONCENTRADOS PARA</div>
+<div class="t c2" style="z-index:443;transform:matrix(1,0,0,1,112.42,225.12)">ANIMALES CONTEGRAL S.A.S.</div>
+<div class="t c3" style="z-index:468;transform:matrix(1,0,0,1,411.75,254.71)">Transportador:</div>
+<div class="t c2" style="z-index:483;transform:matrix(1,0,0,1,490.27,214.19)">CREDITO 30 DIAS</div>
+<div class="t c3" style="z-index:499;transform:matrix(1,0,0,1,654.68,215.54)">Fecha de vencimiento:</div>
+<div class="t c3" style="z-index:521;transform:matrix(1,0,0,1,424.93,304.43)">OC.Nro</div>
+<div class="t c3" style="z-index:528;transform:matrix(1,0,0,1,488.88,304.43)">Pedido Nro.</div>
+<div class="t c3" style="z-index:539;transform:matrix(1,0,0,1,579.87,304.43)">Remisiones</div>
+<div class="t c2" style="z-index:551;transform:matrix(1,0,0,1,573.64,317.39)">RRD-00000002</div>
+<div class="t c2" style="z-index:563;transform:matrix(1,0,0,1,681.6,117.97)">Page 1 of 1</div>
+<div class="t c3" style="z-index:575;transform:matrix(1,0,0,1,411.75,235.6)">Medio de Pago:</div>
+<div class="t c6" style="z-index:589;transform:matrix(1,0,0,1,626.15,47.25)">FACTURA ELECTRONICA DE</div>
+<div class="t c6" style="z-index:611;transform:matrix(1,0,0,1,682.74,59.52)">VENTA</div>
+<div class="t c2" style="z-index:617;transform:matrix(1,0,0,1,29.38,172.05)">Autorización Numeración de Facturación No. 18764113959039 Numeración: AUTORIZADA Rango desde: FRD1 hasta: FRD5000 Vigencia desde:</div>
+<div class="t c2" style="z-index:746;transform:matrix(1,0,0,1,29.38,182.78)">2026/08/13 hasta: 13/08/2028 - 24 Meses</div>
+<div class="t c2" style="z-index:785;transform:matrix(1,0,0,1,30.34,195.28)">Linea de Transparencia 018000115522- grupobios@lineatransparencia.com</div>
+<div class="t c3" style="z-index:854;transform:matrix(1,0,0,1,31.68,232.53)">Establecimiento:</div>
+<div class="t c3" style="z-index:871;transform:matrix(1,0,0,1,34.56,320.18)">Ciudad:</div>
+<div class="t c2" style="z-index:878;transform:matrix(1,0,0,1,113.57,232.53)">NC-MDT-CONTEGRAL S A S</div>
+<div class="t c3" style="z-index:900;transform:matrix(1,0,0,1,412.03,274.96)">Cedula:</div>
+<div class="t c3" style="z-index:907;transform:matrix(1,0,0,1,583.49,274.96)">Placa:</div>
+<div class="t c3" style="z-index:913;transform:matrix(1,0,0,1,235.2,251.83)">Codigo:</div>
+<div class="t c2" style="z-index:920;transform:matrix(1,0,0,1,293.26,250.13)">001-000</div>
+<div class="t c2" style="z-index:928;transform:matrix(1,0,0,1,113.57,317.01)">Envigado</div>
+<div class="t c2" style="z-index:936;transform:matrix(1,0,0,1,29.38,143.06)">Somos Grandes contribuyentes seg?n resoluci?n No. 000200 con fecha 27/12/2024</div>
+<div class="t c2" style="z-index:1013;transform:matrix(1,0,0,1,29.38,159.19)">Somos Autoretenedores  seg?n resoluci?n No. 13093  con fecha  05/11/2025</div>
+<div class="t c2" style="z-index:1085;transform:matrix(1,0,0,1,384.39,143.06)">- Responsable de IVA</div>
+<div class="t c2" style="z-index:1105;transform:matrix(1,0,0,1,355.3,159.19)">- Excepto para rendimientos financieros</div>
+<div class="t c2" style="z-index:1145;transform:matrix(1,0,0,1,373.34,948.09)">Firma del Comprador</div>
+<div class="t c2" style="z-index:1164;transform:matrix(1,0,0,1,116.22,948.09)">Firma Emisor</div>
+<div class="t c2" style="z-index:1177;transform:matrix(1,0,0,1,109.63,839.23)">CUFE_DIAN0123456789__9876543210NAID_EFUC</div>
+<div class="t c3" style="z-index:1217;transform:matrix(1,0,0,1,34.56,839.23)">CUFE:</div>
+<div class="t c2" style="z-index:1223;transform:matrix(1,0,0,1,34.08,791.13)">5H59qqrkFwQLjyx6s0oN1gk8B3QryIoTTLaQ2H7CRXjL18eLBeB51PoBY4wVdBRevkVjO6jvnR1T9QH7Phx53j5ExDYEZScWzbcnSBSZshcQI8nfI2NAKqVkmlZ</div>
+<div class="t c2" style="z-index:1346;transform:matrix(1,0,0,1,34.08,801.87)">HVpnef8RXlT5nrXt7rPr2HpElxGYriPYmh7TZuiddfzj0hIgrwzvmJ7YTWTUxJErnXUmdcWIiRkMZ5BvIw9ejGg6k2bzwi7j8v1oeyT8ORZQlAhYSMPNSpOyuI2gYG</div>
+<div class="t c2" style="z-index:1472;transform:matrix(1,0,0,1,34.08,812.6)">ewJfe97PIOcSTHJZa90ohrOmCRefOqS8pZGcrH7j2gWXcswexmaxPUjAJBQ4VLjTzirRxi2uGnVIBFlqZqTJ8hNnAOttYwL</div>
+<div class="t c3" style="z-index:1567;transform:matrix(1,0,0,1,34.08,779.13)">FIRMA DIGITAL</div>
+<div class="t c6" style="z-index:1580;transform:matrix(1,0,0,1,32.64,707.13)">Notas:</div>
+<div class="t c6" style="z-index:1586;transform:matrix(1,0,0,1,101.39,694.35)">CERO PESOS M/CTE *******</div>
+<div class="t c7" style="z-index:1610;transform:matrix(1,0,0,1,76.64,712.61)">Pruebas totales</div>
+<div class="t c6" style="z-index:1625;transform:matrix(1,0,0,1,32.64,694.35)">Valor letras:</div>
+<div class="t c1" style="z-index:1638;transform:matrix(1,0,0,1,34.08,959.13)">Domicilio principal: Mizooco S,A,S Carrera 48 Nro. 27 A sur -89 Envigado - Antioquia - PBX: (4) 403-50-30</div>
+<div class="t c1" style="z-index:1743;transform:matrix(1,0,0,1,34.56,978.43)">Factura generada por software de Sistemas de Información</div>
+<div class="t c1" style="z-index:1799;transform:matrix(1,0,0,1,34.56,990.7)">Empresarial S.A. Nit 890.319.193-3  Siesa e-Invoicing Nit 890.319.193-3</div>
+<div class="t c2" style="z-index:1870;transform:matrix(1,0,0,1,620.77,948.09)">Firma y sello del cliente</div>
+<div class="t c6" style="z-index:1897;transform:matrix(1,0,0,1,200.92,631.46)">CUOTAS FOMENTO</div>
+<div class="t c6" style="z-index:1911;transform:matrix(1,0,0,1,724.95,648.16)">$0.00</div>
+<div class="t c6" style="z-index:1916;transform:matrix(1,0,0,1,82.91,632.7)">TOTAL BASE</div>
+<div class="t c6" style="z-index:1926;transform:matrix(1,0,0,1,461.09,631.46)">SUBTOTAL</div>
+<div class="t c6" style="z-index:1934;transform:matrix(1,0,0,1,720.54,631.46)">TOTAL</div>
+<div class="t c6" style="z-index:1939;transform:matrix(1,0,0,1,564.67,631.46)">VALOR IVA  ASUMIDO</div>
+<div class="t c1" style="z-index:1957;transform:matrix(1,0,0,1,61.4,679.39)">$0.00</div>
+<div class="t c1" style="z-index:1962;transform:matrix(1,0,0,1,238.23,648.16)">$0.00</div>
+<div class="t c6" style="z-index:1967;transform:matrix(1,0,0,1,32.74,609.95)">TOTAL BULTOS:</div>
+<div class="t c6" style="z-index:1980;transform:matrix(1,0,0,1,335.52,609.95)">TOTAL KILOS:</div>
+<div class="t c1" style="z-index:1992;transform:matrix(1,0,0,1,144.1,609.95)">85</div>
+<div class="t c1" style="z-index:1994;transform:matrix(1,0,0,1,436.03,609.95)">825.00</div>
+<div class="t c2" style="z-index:2000;transform:matrix(1,0,0,1,574.18,995.33)">FECHA_ACEPTACION_DIAN_XYX</div>
+<div class="t c3" style="z-index:2025;transform:matrix(1,0,0,1,391.87,995.33)">FECHA Y HORA ACEPTACION DIAN:</div>
+<div class="t c6" style="z-index:2054;transform:matrix(1,0,0,1,322.36,631.46)">RETENCION</div>
+<div class="t c6" style="z-index:2063;transform:matrix(1,0,0,1,351.59,648.45)">$0</div>
+<div class="t c1" style="z-index:2065;transform:matrix(1,0,0,1,580.52,646.91)">$17,797.50</div>
+<div class="t c1" style="z-index:2075;transform:matrix(1,0,0,1,475.98,644.7)">$1,601,775</div>
+<div class="t c6" style="z-index:2085;transform:matrix(1,0,0,1,99.95,646.91)">$5,331,655</div>
+<div class="t c2" style="z-index:2095;transform:matrix(1,0,0,1,51.14,551.2)">IMPUESTO</div>
+<div class="t c2" style="z-index:2103;transform:matrix(1,0,0,1,156.09,551.2)">BASE</div>
+<div class="t c2" style="z-index:2107;transform:matrix(1,0,0,1,249.38,551.2)">TASA</div>
+<div class="t c2" style="z-index:2111;transform:matrix(1,0,0,1,338.77,551.2)">VALOR</div>
+<div class="t c1" style="z-index:2116;transform:matrix(1,0,0,1,68.41,570.4)">IVA</div>
+<div class="t c1" style="z-index:2119;transform:matrix(1,0,0,1,143.34,570.4)">$5,331,655</div>
+<div class="t c1" style="z-index:2129;transform:matrix(1,0,0,1,253.86,570.4)">5 %</div>
+<div class="t c1" style="z-index:2132;transform:matrix(1,0,0,1,336.81,570.4)">$266,583</div>
+</div>
+</body>
+</html>

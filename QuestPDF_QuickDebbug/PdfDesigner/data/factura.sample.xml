@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inv:Invoice xmlns:inv="urn:demo:invoice" xmlns:cbc="urn:demo:common">
+  <cbc:Number>FAC-1001</cbc:Number>
+  <cbc:IssueDate>2026-09-12</cbc:IssueDate>
+  <inv:Supplier>
+    <cbc:Name>AJECOLOMBIA S.A.S.</cbc:Name>
+    <cbc:TaxId>830081407</cbc:TaxId>
+  </inv:Supplier>
+  <inv:Customer>
+    <cbc:Name>SAPIA CI SAS</cbc:Name>
+    <cbc:TaxId>830096590</cbc:TaxId>
+    <cbc:Address>AER PALONEGRO LC 2 077</cbc:Address>
+  </inv:Customer>
+  <inv:Lines>
+    <inv:Line>
+      <cbc:Description>CIFRUT CITRUS REG PET 0.25LT 15</cbc:Description>
+      <cbc:Quantity>1</cbc:Quantity>
+      <cbc:UnitPrice>12000</cbc:UnitPrice>
+    </inv:Line>
+    <inv:Line>
+      <cbc:Description>BIG NARANJA REG PET 0.4LT 12</cbc:Description>
+      <cbc:Quantity>2</cbc:Quantity>
+      <cbc:UnitPrice>15000</cbc:UnitPrice>
+    </inv:Line>
+    <inv:Line>
+      <cbc:Description>BIG KOLA ROJA 0.4LT NF</cbc:Description>
+      <cbc:Quantity>1</cbc:Quantity>
+      <cbc:UnitPrice>15000</cbc:UnitPrice>
+    </inv:Line>
+  </inv:Lines>
+  <inv:Totals>
+    <cbc:Total>57000</cbc:Total>
+  </inv:Totals>
+</inv:Invoice>

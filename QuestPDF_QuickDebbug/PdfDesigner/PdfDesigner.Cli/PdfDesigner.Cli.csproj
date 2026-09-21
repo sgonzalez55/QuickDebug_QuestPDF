@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>PdfDesigner.Cli</RootNamespace>
+    <AssemblyName>PdfDesigner.Cli</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PdfDesigner.Engine\PdfDesigner.Engine.csproj" />
+    <ProjectReference Include="..\..\DebugPDF\PdfQuickDebug\PdfQuickDebug.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\DebugPDF\PdfQuickDebug\Assets\Fonts\LiberationSans-Regular.ttf"
+          Link="Assets\Fonts\LiberationSans-Regular.ttf"
+          CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

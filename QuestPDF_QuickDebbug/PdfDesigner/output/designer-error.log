@@ -1,0 +1,47 @@
+[2026-09-17 14:45:34] UnhandledException: System.Text.Json.JsonException: The JSON value could not be converted to PdfQuickDebug.Designer.Model.LayoutNode. Path: $.header | LineNumber: 24 | BytePositionInLine: 13.
+   at System.Text.Json.ThrowHelper.ThrowJsonException_DeserializeUnableToConvertValue(Type propertyType)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.ReadJsonAndSetMember(Object obj, ReadStack& state, Utf8JsonReader& reader)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value)
+   at System.Text.Json.Serialization.JsonConverter`1.TryRead(Utf8JsonReader& reader, Type typeToConvert, JsonSerializerOptions options, ReadStack& state, T& value, Boolean& isPopulatedValue)
+   at System.Text.Json.Serialization.JsonConverter`1.ReadCore(Utf8JsonReader& reader, JsonSerializerOptions options, ReadStack& state)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 utf8Json, JsonTypeInfo`1 jsonTypeInfo, Nullable`1 actualByteCount)
+   at System.Text.Json.JsonSerializer.ReadFromSpan[TValue](ReadOnlySpan`1 json, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Deserialize[TValue](String json, JsonSerializerOptions options)
+   at PdfQuickDebug.Designer.Model.DesignerJson.Deserialize(String json) in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.Engine\Model\DesignerJson.cs:line 23
+   at PdfQuickDebug.Designer.Model.DesignerJson.Load(String path) in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.Engine\Model\DesignerJson.cs:line 19
+   at PdfQuickDebug.Designer.WinForms.DesignerForm.ApplyClient(StartAction mode, String chosenPath, String onboardXmlPath) in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\DesignerForm.cs:line 177
+   at PdfQuickDebug.Designer.WinForms.DesignerForm..ctor(String clientName, StartAction mode, String chosenPath, String onboardXmlPath) in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\DesignerForm.cs:line 60
+   at PdfQuickDebug.Designer.WinForms.Program.Main() in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\Program.cs:line 28
+
+[2026-09-17 14:46:41] UnhandledException: System.ArgumentException: El XML no puede estar vacío. (Parameter 'xml')
+   at PdfQuickDebug.Designer.Data.XmlDataResolver..ctor(String xml, IDictionary`2 namespaces, Action`1 log) in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.Engine\Data\XmlDataResolver.cs:line 46
+   at PdfQuickDebug.Designer.WinForms.DesignerForm.CreateResolver() in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\DesignerForm.cs:line 215
+   at PdfQuickDebug.Designer.WinForms.DesignerForm.RenderDataFields() in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\DesignerForm.cs:line 270
+   at PdfQuickDebug.Designer.WinForms.DesignerForm.ApplyClient(StartAction mode, String chosenPath, String onboardXmlPath) in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\DesignerForm.cs:line 185
+   at PdfQuickDebug.Designer.WinForms.DesignerForm..ctor(String clientName, StartAction mode, String chosenPath, String onboardXmlPath) in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\DesignerForm.cs:line 60
+   at PdfQuickDebug.Designer.WinForms.Program.Main() in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\Program.cs:line 28
+
+[2026-09-17 14:47:53] UnhandledException: System.ArgumentException: El XML no puede estar vacío. (Parameter 'xml')
+   at PdfQuickDebug.Designer.Data.XmlDataResolver..ctor(String xml, IDictionary`2 namespaces, Action`1 log) in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.Engine\Data\XmlDataResolver.cs:line 46
+   at PdfQuickDebug.Designer.WinForms.DesignerForm.CreateResolver() in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\DesignerForm.cs:line 215
+   at PdfQuickDebug.Designer.WinForms.DesignerForm.RenderDataFields() in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\DesignerForm.cs:line 270
+   at PdfQuickDebug.Designer.WinForms.DesignerForm.ApplyClient(StartAction mode, String chosenPath, String onboardXmlPath) in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\DesignerForm.cs:line 185
+   at PdfQuickDebug.Designer.WinForms.DesignerForm..ctor(String clientName, StartAction mode, String chosenPath, String onboardXmlPath) in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\DesignerForm.cs:line 60
+   at PdfQuickDebug.Designer.WinForms.Program.Main() in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\Program.cs:line 28
+
+[2026-09-17 15:06:50] UnhandledException: System.Xml.XmlException: There are multiple root elements. Line 1, position 6481.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String arg)
+   at System.Xml.XmlTextReaderImpl.ParseDocumentContent()
+   at System.Xml.XmlLoader.LoadDocSequence(XmlDocument parentDoc)
+   at System.Xml.XmlDocument.Load(XmlReader reader)
+   at System.Xml.XmlDocument.LoadXml(String xml)
+   at PdfQuickDebug.Designer.Data.XmlDataResolver..ctor(String xml, IDictionary`2 namespaces, Action`1 log) in C:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.Engine\Data\XmlDataResolver.cs:line 49
+   at PdfQuickDebug.Designer.WinForms.DesignerForm.CreateResolver() in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\DesignerForm.cs:line 275
+   at PdfQuickDebug.Designer.WinForms.DesignerForm.RenderDataFields() in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\DesignerForm.cs:line 330
+   at PdfQuickDebug.Designer.WinForms.DesignerForm.ApplyClient(StartAction mode, String chosenPath, String onboardXmlPath) in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\DesignerForm.cs:line 194
+   at PdfQuickDebug.Designer.WinForms.DesignerForm..ctor(String clientName, StartAction mode, String chosenPath, String onboardXmlPath) in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\DesignerForm.cs:line 60
+   at PdfQuickDebug.Designer.WinForms.Program.Main() in c:\Users\santiago.gonzalez\Downloads\QuestPDF_QuickDebbug_v3\QuestPDF_QuickDebbug\PdfDesigner\PdfDesigner.WinForms\Program.cs:line 28
+

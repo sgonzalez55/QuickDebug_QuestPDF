@@ -1,0 +1,140 @@
+{
+  "version": "3.0",
+  "page": {
+    "size": "Letter",
+    "orientation": "Portrait",
+    "width": 0,
+    "height": 0,
+    "margins": {
+      "top": 20,
+      "right": 20,
+      "bottom": 20,
+      "left": 20
+    },
+    "unit": "pt",
+    "fontFamily": "Liberation Sans",
+    "defaultFontSize": 10
+  },
+  "metadata": {
+    "nit": "900111222",
+    "templateName": "PRUEEEE",
+    "clientName": "Designer",
+    "version": "1.0"
+  },
+  "namespaces": {},
+  "header": [
+    {
+      "id": "7083400c",
+      "kind": "pageHeader",
+      "showOnce": false,
+      "height": 60,
+      "canGrow": false,
+      "compressDetail": false,
+      "renderAsTable": false,
+      "keepWithNext": false,
+      "visible": true,
+      "elements": [
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.Document.DueDate",
+            "default": "15/10/2026"
+          },
+          "format": "text",
+          "x": 320,
+          "y": 40,
+          "width": 160,
+          "height": 18,
+          "zIndex": 0,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "1a0c50d1",
+      "kind": "reportHeader",
+      "showOnce": true,
+      "height": 80,
+      "canGrow": false,
+      "compressDetail": false,
+      "renderAsTable": false,
+      "keepWithNext": false,
+      "visible": true,
+      "elements": []
+    }
+  ],
+  "content": [
+    {
+      "id": "e8fcc64b",
+      "kind": "groupHeader",
+      "showOnce": false,
+      "height": 30,
+      "canGrow": false,
+      "compressDetail": false,
+      "renderAsTable": false,
+      "keepWithNext": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "4b86b6a1",
+      "kind": "detail",
+      "showOnce": false,
+      "height": 110,
+      "canGrow": false,
+      "compressDetail": false,
+      "renderAsTable": false,
+      "keepWithNext": false,
+      "visible": true,
+      "repeat": {
+        "xpath": "",
+        "alias": ""
+      },
+      "elements": []
+    },
+    {
+      "id": "6497cf8b",
+      "kind": "groupFooter",
+      "showOnce": false,
+      "height": 24,
+      "canGrow": false,
+      "compressDetail": false,
+      "renderAsTable": false,
+      "keepWithNext": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "88ff5b38",
+      "kind": "reportFooter",
+      "showOnce": false,
+      "height": 64,
+      "canGrow": false,
+      "compressDetail": false,
+      "renderAsTable": false,
+      "keepWithNext": false,
+      "visible": true,
+      "elements": []
+    }
+  ],
+  "footer": [
+    {
+      "id": "18327f28",
+      "kind": "pageFooter",
+      "showOnce": false,
+      "height": 30,
+      "canGrow": false,
+      "compressDetail": false,
+      "renderAsTable": false,
+      "keepWithNext": false,
+      "visible": true,
+      "elements": []
+    }
+  ],
+  "expressions": {}
+}

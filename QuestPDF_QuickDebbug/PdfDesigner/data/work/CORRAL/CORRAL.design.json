@@ -1,0 +1,292 @@
+{
+  "version": "2.0",
+  "page": {
+    "size": "Letter",
+    "orientation": "Portrait",
+    "width": 0,
+    "height": 0,
+    "margins": {
+      "top": 20,
+      "right": 20,
+      "bottom": 20,
+      "left": 20
+    },
+    "unit": "pt",
+    "fontFamily": "Liberation Sans",
+    "defaultFontSize": 10
+  },
+  "metadata": {
+    "nit": "",
+    "templateName": "CORRAL",
+    "clientName": "Designer",
+    "version": "1.0"
+  },
+  "namespaces": {},
+  "sections": [
+    {
+      "id": "4a658f9d",
+      "kind": "reportHeader",
+      "height": 10,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "4fe24e29",
+      "kind": "pageHeader",
+      "height": 110,
+      "canGrow": false,
+      "visible": true,
+      "elements": [
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.Issuer.Name",
+            "default": "Comercializadora Prueba SAS"
+          },
+          "format": "text",
+          "x": 190,
+          "y": 0,
+          "width": 160,
+          "height": 18,
+          "zIndex": 0,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "align": "center",
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.Issuer.Address",
+            "default": "Calle 10 # 20-30"
+          },
+          "format": "text",
+          "x": 190,
+          "y": 10,
+          "width": 160,
+          "height": 18,
+          "zIndex": 1,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "align": "center",
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.InformacionAdditional.Telefono_Receptor",
+            "default": "3001234567"
+          },
+          "format": "text",
+          "x": 190,
+          "y": 30,
+          "width": 160,
+          "height": 18,
+          "zIndex": 2,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "align": "center",
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "",
+            "expr": "model.Issuer.Email",
+            "default": "facturacion@prueba-comercializadora.com"
+          },
+          "format": "text",
+          "x": 180,
+          "y": 20,
+          "width": 230,
+          "height": 20,
+          "zIndex": 3,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "shape",
+          "shape": "rectangle",
+          "cornerRadius": 6,
+          "x": 160,
+          "y": -0,
+          "width": 250,
+          "height": 60,
+          "zIndex": -1,
+          "visible": true,
+          "style": {
+            "background": "#FFFFFF",
+            "borderColor": "#000000",
+            "borderWidth": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "d7de8a42",
+      "kind": "groupHeader",
+      "height": 20,
+      "canGrow": false,
+      "visible": true,
+      "elements": [
+        {
+          "type": "text",
+          "text": "Descripcion",
+          "x": 0,
+          "y": 0,
+          "width": 120,
+          "height": 10,
+          "zIndex": 0,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "text",
+          "text": "UM",
+          "x": 190,
+          "y": 0,
+          "width": 40,
+          "height": 10,
+          "zIndex": 1,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "align": "center",
+            "color": "#000000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6903b145",
+      "kind": "detail",
+      "height": 20,
+      "canGrow": false,
+      "visible": true,
+      "borderColor": "#FFFFFF",
+      "repeat": {
+        "xpath": "//Detalle",
+        "alias": ""
+      },
+      "elements": [
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "@descripcion_tx",
+            "expr": "line.Description",
+            "default": "Producto de prueba A - Caja x 10 unidades"
+          },
+          "format": "text",
+          "x": 0,
+          "y": 0,
+          "width": 200,
+          "height": 10,
+          "zIndex": 0,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "@unidad_medida_cd",
+            "expr": "line.Unit_Medition",
+            "default": "PAC"
+          },
+          "format": "text",
+          "x": 200,
+          "y": 0,
+          "width": 30,
+          "height": 10,
+          "zIndex": 1,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "@item_subtotal_am",
+            "expr": "line.PrecioAntesIVA",
+            "default": "150,000.00"
+          },
+          "format": "text",
+          "x": 230,
+          "y": 0,
+          "width": 160,
+          "height": 10,
+          "zIndex": 2,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        },
+        {
+          "type": "field",
+          "binding": {
+            "xpath": "@cantidad_unit",
+            "expr": "line.Cant_Und",
+            "default": ""
+          },
+          "format": "text",
+          "x": 310,
+          "y": 0,
+          "width": 160,
+          "height": 18,
+          "zIndex": 3,
+          "visible": true,
+          "style": {
+            "fontSize": 10,
+            "color": "#000000"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3796ad65",
+      "kind": "groupFooter",
+      "height": 24,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "0837bd55",
+      "kind": "pageFooter",
+      "height": 30,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    },
+    {
+      "id": "7ce1d428",
+      "kind": "reportFooter",
+      "height": 8,
+      "canGrow": false,
+      "visible": true,
+      "elements": []
+    }
+  ],
+  "expressions": {}
+}
